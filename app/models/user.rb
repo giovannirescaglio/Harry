@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :moods
   has_many :projects, through: :guests
+  has_many :scenarios
 end

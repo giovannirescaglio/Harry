@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects
-
-  validates :first_name, presence: true
+  has_many :moods
 end

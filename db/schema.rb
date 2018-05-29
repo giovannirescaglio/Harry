@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_29_132444) do
+ActiveRecord::Schema.define(version: 2018_05_29_152343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,21 @@ ActiveRecord::Schema.define(version: 2018_05_29_132444) do
     t.integer "budget"
     t.index ["project_id"], name: "index_guests_on_project_id"
     t.index ["user_id"], name: "index_guests_on_user_id"
+  end
+
+  create_table "moods", force: :cascade do |t|
+    t.boolean "wild", default: false, null: false
+    t.boolean "city", default: false, null: false
+    t.boolean "fancy", default: false, null: false
+    t.boolean "trashy", default: false, null: false
+    t.boolean "clubbing", default: false, null: false
+    t.boolean "chilling", default: false, null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_moods_on_project_id"
+    t.index ["user_id"], name: "index_moods_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -68,6 +83,8 @@ ActiveRecord::Schema.define(version: 2018_05_29_132444) do
 
   add_foreign_key "guests", "projects"
   add_foreign_key "guests", "users"
+  add_foreign_key "moods", "projects"
+  add_foreign_key "moods", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "week_ends", "projects"
 end

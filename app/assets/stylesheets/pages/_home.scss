@@ -1,1 +1,128 @@
 // Specific CSS for your home-page
+.banner {
+  background: url("friends6bisbis.jpeg");
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-image: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+#home-description{
+display: flex;
+}
+
+#home-calculate {
+  display: flex;
+  img{
+    height: 50px;
+  }
+}
+#home-date {
+  display: flex;
+  img{
+    height: 50px;
+  }
+}
+#home-activities{
+  display: flex;
+  img{
+    height: 50px;
+  }
+}
+#home-evaluation{
+  display: flex;
+  img{
+    height: 50px;
+  }
+}
+
+#home-illustration{
+ img{
+    height: 300px;
+  }
+
+}
+.home-review{
+display: flex;
+justify-content: space-around;
+margin-top: 20px;
+margin-bottom: 25px;
+}
+.home-img-intermediate-size {
+  height: 100%;
+}
+
+.card {
+  height: 175px;
+  width: 290px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  background-color: #C4C4C4;
+  border-radius: 3px;
+}
+.card-user {
+  background: url("avatar1.png");
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-stars {
+  color: #FECA44;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+
+
+
+

@@ -1,0 +1,35 @@
+<div class="banner-size-opacity">
+  <h1>Invite your crew.</h1>
+  <h1>Kick off your party.</h1>
+</div>
+<%= simple_form_for @project do |f| %>
+  <div class="separator-gradient">
+    <h3>New project name:</h3>
+    <%= f.input_field :name %>
+  </div>
+  <div class="separator-gradient"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %><br>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <h1>Step 2.</h1>
+        <h3><i class="far fa-calendar-alt"></i> Define a schedule</h3>
+        <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
+      </div>
+    </div>
+  </div>
+  <div class="separator-gradient"></div>
+  <div>
+    <h1>Step 3.</h1>
+    <h3><i class="fas fa-hand-holding-usd"></i> Define a maximum budget per person</h3>
+    <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
+    <%= f.input_field :max_budget %>
+  </div>
+  <div class="separator-gradient">
+    <h3>Ready for take-off?</h3>
+    <%= f.submit 'submit' %>
+  </div>
+<% end %>

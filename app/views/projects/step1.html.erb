@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <h1><%= @project.name.capitalize %></h1>
+  <div><%#= image_tag (@project.guests.user.picture) %>
+    <% @guests.each do |guest| %>
+      <%= image_tag (guest.user.picture) %>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <h2>Step 1</h2>
+  <h3>Setting the mood</h3>
+  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+  </p>
+  <h4>4 questions</h4>
+  <h4>Estimated time to complete: 3 minutes</h4>
+  <%= link_to 'Start', scenery_project_moods_path(@project) %>
+</div>

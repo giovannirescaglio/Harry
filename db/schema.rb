@@ -66,25 +66,8 @@ ActiveRecord::Schema.define(version: 2018_05_30_144010) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "step"
     t.index ["user_id"], name: "index_projects_on_user_id"
-  end
-
-  create_table "scenario_activities", force: :cascade do |t|
-    t.bigint "scenario_id"
-    t.bigint "activity_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["activity_id"], name: "index_scenario_activities_on_activity_id"
-    t.index ["scenario_id"], name: "index_scenario_activities_on_scenario_id"
-  end
-
-  create_table "scenarios", force: :cascade do |t|
-    t.bigint "destination_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["destination_id"], name: "index_scenarios_on_destination_id"
-    t.index ["user_id"], name: "index_scenarios_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -123,9 +106,5 @@ ActiveRecord::Schema.define(version: 2018_05_30_144010) do
   add_foreign_key "moods", "projects"
   add_foreign_key "moods", "users"
   add_foreign_key "projects", "users"
-  add_foreign_key "scenario_activities", "activities"
-  add_foreign_key "scenario_activities", "scenarios"
-  add_foreign_key "scenarios", "destinations"
-  add_foreign_key "scenarios", "users"
   add_foreign_key "week_ends", "projects"
 end

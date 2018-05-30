@@ -9,7 +9,11 @@ class ProjectsController < ApplicationController
     @project.step = 1
     @project.save
     if @project.persisted?
-      @guest = Guest.create(user: current_user, project: @project)
+      @guest = Guest.create(user: current_user, project: @project, role:"admin")
+      params[:emails].each do |email|
+        @newuser = User.create(email: email, password: ENV["DEFAULT_PASSWORD"])
+        @newguest = Guest.create(user: @newuser, project: @project, role:"participant")
+      end
     end
   end
 
@@ -22,3 +26,6 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name, :start_date, :end_date, :max_budget)
   end
 end
+
+
+#ENV["DEFAULT_PASSWORD"]

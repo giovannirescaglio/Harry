@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'projects/new'
+  get 'projects/create'
+  get 'projects/destroy'
   devise_for :users
 
   root to: 'pages#home'

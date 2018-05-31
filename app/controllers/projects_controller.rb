@@ -4,6 +4,12 @@ class ProjectsController < ApplicationController
     @guests = @project.guests
   end
 
+  def step2
+    @project = Project.find(params[:id])
+    authorize @project
+    @guests = @project.guests
+  end
+
   def find_weekends(start_date, end_date)
     week_ends = []
     if start_date.wday > 5

@@ -27,9 +27,10 @@ class MoodsController < ApplicationController
     mood_step = params[:mood][:step]
     next_step = Mood::TRANSITIONS[mood_step]
     if next_step.nil?
-      url = preferences_guest_path(current_user)
+      guest = current_user.guests.find_by(project_id: @project)
+      url = preferences_guest_path(guest)
     else
-      url = "#{next_step}_project_moods_path(@project)"
+      url = polymorphic_url([next_step.to_sym, @project, Mood])
     end
     if @mood.update(mood_params)
       redirect_to url

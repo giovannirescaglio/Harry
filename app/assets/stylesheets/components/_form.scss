@@ -1,10 +1,17 @@
 .signupcontainer {
-  background-color: white;
+  background-color: #EDEBEB;
   width: 500px;
-  height: 740px;
+  height: 700px;
   opacity: 1;
-  margin: 10px;
-  padding: 20px;
+  margin: 20px;
+  padding: 40px 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+  .form-inputs{
+    margin-top:40px;
+    margin-bottom: 40px;
+  }
 }
 
 #sign_up_btn {
@@ -12,22 +19,17 @@ background: #7269CC;
 margin-bottom: 5px;
 }
 
-.form_input{
-  color:#7269CC;
+.formcolor{
+  color:black;
 }
 
 .link{
-  color:#7269CC;
+  color:black;
 }
 
-
-#useremoji {
-  color: #7269CC;
-  margin-left: 10px;
-}
 
 body h2 {
-  color: #7269CC;
+  color: black;
 }
 
 #logo {
@@ -37,10 +39,64 @@ body h2 {
 }
 
 .logincontainer {
-  background-color: white;
+  background-color: #EDEBEB;
   width: 500px;
-  height: 540px;
+  height: 700px;
   opacity: 1;
-  margin: 10px;
-  padding: 20px;
+  margin: 20px;
+  padding: 80px 40px 80px 40px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
+  .form-inputs{
+    margin-top:70px;
+    margin-bottom: 40px;
+  }
+  .form-actions{
+  margin-bottom:5px;
+  }
+}
+
+.formbanner {
+background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url("friends6bisbis.jpg") ;
+  color: black;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px;
+  h1 {
+  width: 50%;
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  }
+  a {
+    width: 250px;
+  }
+}
+
+.loginbanner {
+background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url("friends6bisbis.jpg") ;
+  color: black;
+  height: calc(100vh - 70px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px;
+  h1 {
+  width: 50%;
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  }
+  a {
+    width: 250px;
+  }
 }

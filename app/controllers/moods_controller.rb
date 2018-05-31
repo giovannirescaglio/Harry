@@ -1,6 +1,6 @@
 class MoodsController < ApplicationController
-  before_action :set_project, only: [:scenery, :lifestyle, :create]
-  before_action :set_mood, only: [:lifestyle, :update]
+  before_action :set_project, only: [:scenery, :lifestyle, :party, :create]
+  before_action :set_mood, only: [:lifestyle, :party, :update]
 
   def scenery
     @mood = Mood.new
@@ -24,12 +24,18 @@ class MoodsController < ApplicationController
   end
 
   def update
-    if @mood.update(mood_params)
-      redirect_to party_project_moods_path(@project)
+    mood_step = params[:mood][:step]
+    next_step = Mood::TRANSITIONS[mood_step]
+    if next_step.nil?
+      url = preferences_guest_path(current_user)
     else
-      render :lifestyle
+      url = "#{next_step}_project_moods_path(@project)"
     end
-
+    if @mood.update(mood_params)
+      redirect_to url
+    else
+      render mood_step.to_sym
+    end
   end
 
   private

@@ -8,6 +8,7 @@
     <div class="col-xs-6">
       <div class="card" style="width:500px;height:500px;background:url('http://via.placeholder.com/500x500');">
         <%= simple_form_for [@project, @mood] do |f| %>
+          <%= f.hidden_field :step, value: 'lifestyle' %>
           <%= f.hidden_field :fancy, value: true %>
           <%= f.submit 'Something fancy?' %>
         <% end %>
@@ -16,6 +17,7 @@
     <div class="col-xs-6">
       <div class="card" style="width:500px;height:500px;background:url('http://via.placeholder.com/500x500');">
         <%= simple_form_for [@project, @mood] do |f| %>
+          <%= f.hidden_field :step, value: 'lifestyle' %>
           <%= f.hidden_field :trashy, value: true %>
           <%= f.submit "Let's go trashy?" %>
         <% end %>

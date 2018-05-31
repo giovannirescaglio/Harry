@@ -24,13 +24,13 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    # authorize @project
     @project = Project.new
+    authorize @project
   end
 
   def create
-    # authorize @project
     @project = Project.new(project_params)
+    authorize @project
     @project.user = current_user
     @project.step = 1
     @project.save

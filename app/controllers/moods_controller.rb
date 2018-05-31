@@ -16,7 +16,7 @@ class MoodsController < ApplicationController
     @mood.project = @project
     @mood.user = current_user
     if @mood.save
-      redirect_to step2_project_path(@project)
+      redirect_to lifestyle_project_moods_path(@project)
     else
       render :scenery
     end

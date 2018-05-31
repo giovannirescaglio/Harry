@@ -1,17 +1,28 @@
 .separator {
 display: flex;
+color: white;
 background-color: #7269CC;
+background: linear-gradient(
+#7269CC, 60%,
+rgba(114, 105, 204, 0.66) 100%);
 width: 100%;
 height: 120px;
 justify-content: center;
 align-items: center;
 }
 
+.small {
+  height: 70px;
+}
+
+.big {
+  height: 200px;
+}
 
 .footer {
-background-color: #7269CC;
+background-color: #515055;
 width: 100%;
-height: 120px;
+height: 70px;
 display: flex;
 justify-content: center;
 text-align: center;

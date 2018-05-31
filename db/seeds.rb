@@ -8,6 +8,7 @@
 
 Destination.destroy_all
 Activity.destroy_all
+Mood.destroy_all
 Guest.destroy_all
 Project.destroy_all
 User.destroy_all
@@ -17,15 +18,15 @@ User.destroy_all
 Tony = User.create!(first_name: "Antoine", last_name: "Goffette", email:"tony@gmail.com", password: "123456")
 Giogio = User.create!(first_name: "Giovanni", last_name: "Rescaglio", email:"giogio@gmail.com", password: "123456")
 Lolo = User.create!(first_name: "Laura", last_name: "Martin", email:"lolo@gmail.com", password: "123456")
-
+puts "user generated"
 # PROJECT SEED
 P = Project.create!(name: "Remis party", start_date: "01/06/2018", end_date: "31/07/2018", max_budget: 400, user: User.first)
-
+puts "project generated"
 # GUEST SEED
 Guest1 = Guest.create!(user: User.first, project: Project.first, budget: 200, role: "admin")
 Guest2 = Guest.create!(user: User.second, project: Project.first, budget: 250, role: "participant")
 Guest3 = Guest.create!(user: User.third, project: Project.first, budget: 300, role: "participant")
-
+puts "guest generated"
 # ACTIVITIES SEED
 
 karting = Activity.create!(name:"karting", category: "day", project: Project.first)
@@ -42,7 +43,7 @@ clubbing = Activity.create!(name: "clubbing", category: "night", project: Projec
 whisky = Activity.create!(name: "whisky by fireplace", category: "night", project: Project.first)
 strip_club = Activity.create!(name: "strip club", category: "night", project: Project.first)
 festival = Activity.create!(name: "festival", category: "night", project: Project.first)
-
+puts "activity generated"
 
 # DESTINATIONS SEED
 
@@ -53,6 +54,6 @@ London = Destination.create!(name:"London", project: Project.first)
 Barcelona = Destination.create!(name:"Barcelona", project: Project.first)
 Madrid = Destination.create!(name:"Madrid", project: Project.first)
 Lisbon = Destination.create!(name:"Rome", project: Project.first)
-
+puts "destination generated"
 
 

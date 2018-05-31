@@ -1,47 +1,46 @@
 <div class="banner">
-    <div id="Home_cta">
-      <h1>create your bachelor party easy-peasy</h1>
-      <a class="button_primary">Try it now ></a>
-    </div>
+      <h1>Create your bachelor party easy-peasy.</h1>
+      <%= link_to "Try it now", new_project_path, class: "button_primary" %>
 </div>
 
 <div id="home-description">
   <div id="home-spec">
     <div id="home-calculate">
-      <%= image_tag "budget_icon.png"%>
+      <div class="home-icon"><%= image_tag "budget_icon.png"%></div>
       <p>Calculate your week-end budget to fit every pockets.</p>
     </div>
     <div id="home-date">
-      <%= image_tag "schedule_icon.jpg"%>
+      <div class="home-icon"><%= image_tag "schedule_icon.jpg"%></div>
       <p>Quickly identify the best date for the event.</p>
     </div>
     <div id="home-activities">
-      <%= image_tag "like_icon_beer.png"%>
+      <div class="home-icon"><%= image_tag "like_icon_beer.png"%></div>
       <p>Select the right activities and destination to please your close one.</p>
     </div>
     <div id="home-evaluation">
-      <%= image_tag "idea_icon.jpg"%>
+      <div class="home-icon"><%= image_tag "idea_icon.jpg"%></div>
       <p>Evaluate your options and build your program.</p>
     </div>
   </div>
-
   <div id="home-illustration">
-    <h2> No more tears, no more fights, let harry do the work</h2>
-    <%= image_tag "illustration_home.png"%>
+    <h2> No more tears, no more fights, let harry do the work.</h2>
+    <div class="home-icon"><%= image_tag "illustration_home.png"%></div>
+
   </div>
 </div>
 
-<div class="separator">
-  <p>Invite your crew, Generate ideas, Enjoy your trip.</p>
-  <%= link_to "Get started", new_project_path, class: "button_secondary" %>
-
-    <!-- <div class="home-img-intermediate-size">
-      <%= image_tag("logo_white.png")%>
-    </div> -->
+<div class="separator big" id="cta">
+  <div class="call-to-action">
+    <h4>Invite your crew, Generate ideas, Enjoy your trip.</h4>
+    <%= link_to "Get started", new_project_path, class: "button_secondary" %>
+  </div>
+  <div class="home-img-intermediate-size">
+    <%= image_tag("logo_white.png")%>
+  </div>
 </div>
 
-
-    <h2 style="text-align: center;">harry makes you happy</h2>
+<div id="reviews-block">
+    <h2 style="text-align: center;">Harry makes you happy</h2>
   <div class="home-review">
     <div class="card">
       <div class="card-stars">
@@ -51,11 +50,10 @@
         <i class="fas fa-star"></i>
       </div>
       <div class="card-description">
-        <h3>don't panic</h3>
+        <h3>5-stars</h3>
         <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
       </div>
-      <img class="card-user">
-      <a class="card-link" href="#" ></a>
+       <div class="card-user"><%= image_tag("avatar1.png")%></div>
     </div>
     <div class="card">
       <div class="card-stars">
@@ -65,11 +63,10 @@
         <i class="fas fa-star"></i>
       </div>
       <div class="card-description">
-        <h3>don't panic</h3>
+        <h3>Fun & Fast</h3>
         <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
       </div>
-      <img class="card-user">
-      <a class="card-link" href="#" ></a>
+      <div class="card-user"><%= image_tag("avatar2.png")%></div>
     </div>
     <div class="card">
       <div class="card-stars">
@@ -79,13 +76,12 @@
         <i class="fas fa-star"></i>
       </div>
       <div class="card-description">
-        <h3>don't panic</h3>
+        <h3>Really easy</h3>
         <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
       </div>
-      <img class="card-user">
-      <a class="card-link" href="#" ></a>
+      <div class="card-user"><%= image_tag("avatar3.png")%></div>
     </div>
   </div>
-
+</div>
 
 

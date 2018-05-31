@@ -4,7 +4,7 @@
 <%= simple_form_for @project do |f| %>
   <div class="separator" id="project-name">
     <h3>New project name:</h3>
-    <%= f.input_field :name %>
+    <%= f.input_field :name, :placeholder => "ex: Harry's Bachelor party" %>
   </div>
   <div id="step1" class="container">
     <div class="row">
@@ -12,7 +12,7 @@
         <h1>Step 1.</h1>
         <h3><i class="fas fa-users"></i> Invite all participants:</h3>
         <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
-        <input type="text" name=email id="email-input">
+        <input type="text" name=email id="email-input" placeholder="ex: harry@gmail.com">
         <p class="button_primary" id="add-email" href="#">add</p>
         <div id="hidden-emails"></div>
       </div>
@@ -25,12 +25,13 @@
     </div>
   </div>
   <div class="separator small"></div>
-  <div class="container">
+  <div id="step2" class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %><br>
-        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", placeholder: "ex: June 8, 2018"} %><br>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", placeholder: "ex: August 8, 2018"} %>
       </div>
+      <div class="col-xs-12 col-md-4"></div>
       <div class="col-xs-12 col-md-4">
         <h1>Step 2.</h1>
         <h3><i class="far fa-calendar-alt"></i> Define a schedule</h3>
@@ -39,13 +40,13 @@
     </div>
   </div>
   <div class="separator small"></div>
-  <div>
+  <div id="step3">
     <h1>Step 3.</h1>
     <h3><i class="fas fa-hand-holding-usd"></i> Define a maximum budget per person</h3>
     <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
-    <%= f.input_field :max_budget %>
+    <%= f.input_field :max_budget, :placeholder => "ex: 300€" %>
   </div>
-  <div class="separator-gradient">
+  <div class="separator" id="submit-div">
     <h3>Ready for take-off?</h3>
     <%= f.submit 'submit' %>
   </div>

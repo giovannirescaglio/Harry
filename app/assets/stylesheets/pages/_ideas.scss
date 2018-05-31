@@ -1,0 +1,85 @@
+#ideas-rows {
+  border-bottom: 1px solid $violet;
+  padding: 30px 20px;
+  h4 {
+    margin: 5px;
+    border-bottom: 5px solid $violet;
+  }
+  p {
+    font-size: 14px;
+    color: gray;
+  }
+
+}
+
+#destination, #day-activity, #night-activity {
+  margin: 10px;
+  width: 240px;
+  font-size: 14px;
+}
+
+#night-activity {
+  background: black;
+}
+
+#inputs-form {
+  height: 170px;
+  h2 {
+    color: $violet;
+    padding: 20px 50px;
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+#ideas-results {
+  width: 100%;
+  padding: 50px;
+  h2 {
+    color: $violet;
+    margin-bottom: 20px;
+  }
+}
+
+#form-div {
+  height: 120px;
+  width: 90%;
+  margin: 0px 50px;
+  background: #EDEDED;
+  border-radius: 5px;
+  padding: 25px 40px;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
+  position: relative;
+}
+
+#activity_name {
+  border: 2px solid $violet;
+  border-radius: 5px;
+  height: 35px;
+  width: 300px;
+  padding: 10px;
+  background: white;
+  color: black;
+  font-size: 16px;
+  margin-top: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+#activity_category {
+  border: 2px solid $violet;
+  border-radius: 5px;
+  height: 35px;
+  width: 200px;
+  padding: 10px;
+  background: $violet;
+  color: white;
+  font-size: 16px;
+  margin-top: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+#activity_submit {
+  position: absolute;
+  right: 60px;
+  top: 40px;
+}

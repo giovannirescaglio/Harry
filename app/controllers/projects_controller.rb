@@ -48,6 +48,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def ideas
+    @project = Project.find(params[:id])
+    authorize @project
+    @destination = Destination.new
+    @activity = Activity.new
+  end
+
   def destroy
   end
 

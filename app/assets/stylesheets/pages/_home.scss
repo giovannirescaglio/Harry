@@ -2,50 +2,41 @@
 .banner {
   background-image: linear-gradient(rgba(18,18,18, 0.37), rgba(18,18,18, 0.20)), url("friends6bisbis.jpg");
   color: white;
-  text-align: center;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-image: contain;
+  background-size: cover;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0,8;
-}
-.banner h1 {
-  font-size: 50px;
+  flex-direction: column;
+  padding: 70px;
+  padding-top: 150px;
+  h1 {
+  width: 50%;
+  font-size: 80px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-}
-.banner p {
-  font-size: 25px;
-  font-weight: lighter;
-  color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
-}
-
-#home-cta{
-  width: 420px;
-  position: relative;
-  left: -400px;
-  a{
-  padding: 5px 80px;
+  margin-bottom: 40px;
   }
-
+  a {
+    width: 250px;
+  }
 }
 
 #home-description{
 display: flex;
 justify-content: space-around;
+height: 700px;
 
 }
 
 #home-spec{
-margin-top: 50px;
+margin-top: 80px;
 width: 360px;
 height: 300px;
 font-size: 17px;
-
+color: #515055;
+p {
+  font-size: 17px;
+}
 }
 
 .home-icon {
@@ -54,28 +45,28 @@ padding: 0 30px;
 
 #home-calculate {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   img{
     height: 50px;
   }
 }
 #home-date {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   img{
     height: 50px;
   }
 }
 #home-activities{
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   img{
     height: 50px;
   }
 }
 #home-evaluation{
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   img{
     height: 50px;
   }
@@ -83,13 +74,17 @@ padding: 0 30px;
 
 
 #home-illustration{
-  width: 500px;
+  width: 550px;
  img{
-    height: 300px;
+    height: 400px;
   }
   h2{
-    width: 355px;
-    margin-top: 95px;
+    margin-top: 100px;
+    color: $violet;
+    justify-content: right;
+    font-size: 46px;
+    text-align: right;
+
   }
 }
 .home-review{
@@ -105,29 +100,38 @@ width: 85%
 }
 }
 
-.call-to-action{
-a{
-padding: 4px 130px;
-margin-left: 10px;
+#cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 100px;
 }
 
+.call-to-action{
+  text-align: center;
+  h4 {
+    padding-bottom: 10px;
+  }
+  a {
+    padding: 5px 80px;
+  }
 }
 .card {
-  height: 175px;
-  width: 310px;
-  background-size: cover !important;
-  background-position: center;
+  height: 200px;
+  width: 340px;
+  padding: 10px;
   color: white;
   position: relative;
   background-color: #C4C4C4;
-  border-radius: 2px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
 }
 
 .card-stars {
   color: #FECA44;
   position: absolute;
-  top: 3px;
-  left: 6px;
+  top: 10px;
+  left: 10px;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -154,7 +158,12 @@ margin-left: 10px;
   }
 }
 
-
+#reviews-block {
+  padding: 20px 50px;
+  h2 {
+    color: $violet;
+  }
+}
 
 
 

@@ -1,15 +1,21 @@
-<h2>Log in</h2>
+<div class="banner">
+  <div class = "logincontainer" >
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div id="logo"> <%= image_tag("logo_black.png") %> </div>
+  <h2>Welcome Back!</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email, required: false, autofocus: true %>
+      <%= f.input :password, required: false %>
+      <%= f.input :remember_me, label_html: { class: 'form_input' }, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Log in" , class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

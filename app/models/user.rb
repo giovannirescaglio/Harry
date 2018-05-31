@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :guests
   has_many :projects, through: :guests
   has_many :scenarios
+  mount_uploader :picture, PhotoUploader
 end
+

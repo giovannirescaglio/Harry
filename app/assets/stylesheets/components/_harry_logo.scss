@@ -1,0 +1,22 @@
+#harry_logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  img {
+    height: 50px;
+  }
+  p {
+    margin: 0;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  h1 {
+    font-size: 35px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+  }
+}

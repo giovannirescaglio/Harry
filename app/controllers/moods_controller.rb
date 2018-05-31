@@ -1,5 +1,6 @@
 class MoodsController < ApplicationController
-  before_action :set_project, only: [:scenery, :create]
+  before_action :set_project, only: [:scenery, :lifestyle, :create]
+  before_action :set_mood, only: [:lifestyle, :update]
 
   def scenery
     @mood = Mood.new
@@ -23,13 +24,23 @@ class MoodsController < ApplicationController
   end
 
   def update
-    # @mood = Mood.find(params[:id])
+    if @mood.update(mood_params)
+      redirect_to party_project_moods_path(@project)
+    else
+      render :lifestyle
+    end
+
   end
 
   private
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def set_mood
+    set_project
+    @mood = @project.moods.where(user_id: current_user).last
   end
 
   def mood_params

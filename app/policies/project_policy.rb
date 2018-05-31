@@ -9,6 +9,10 @@ class ProjectPolicy < ApplicationPolicy
     true
   end
 
+  def ideas?
+    true
+  end
+
   def new?
     true
   end

@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <h1>Question 4</h1>
+  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+  </p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <h3><i class="far fa-money-bill-alt"></i> Define your budget</h3>
+      <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+      </p>
+      <p><%= @admin %> has set the maximum budget per person to: 500€</p>
+      <%= simple_form_for @guest do |f| %>
+        <%= f.input :budget, placeholder: '> My average budget for the week-end' %>
+        <%= f.submit 'test' %>
+      <% end %>
+    </div>
+    <div class="col-xs-6">
+      <h3><i class="far fa-calendar"></i> Confirm your schedule</h3>
+      <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+      </p>
+      <p>Please click on the week-ends when you plan to be available.</p>
+    </div>
+  </div>
+</div>

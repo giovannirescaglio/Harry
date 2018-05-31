@@ -7,12 +7,18 @@
   <div class="row">
     <div class="col-xs-6">
       <div class="card" style="width:500px;height:500px;background:url('http://via.placeholder.com/500x500');">
-        <%= link_to 'Into The Wild?', project_moods_path(@project, wild: true), method: 'post' %>
+        <%= simple_form_for [@project, @mood] do |f| %>
+          <%= f.hidden_field :wild, value: true %>
+          <%= f.submit 'Into the Wild' %>
+        <% end %>
       </div>
     </div>
     <div class="col-xs-6">
       <div class="card" style="width:500px;height:500px;background:url('http://via.placeholder.com/500x500');">
-        <%= link_to 'City?', project_moods_path(@project, city: true), method: 'post' %>
+        <%= simple_form_for [@project, @mood] do |f| %>
+          <%= f.hidden_field :city, value: true %>
+          <%= f.submit 'City Break?' %>
+        <% end %>
       </div>
     </div>
   </div>

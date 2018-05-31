@@ -1,0 +1,152 @@
+p {
+  font-size: 16px;
+}
+
+#new-project-banner {
+  background-image: linear-gradient(rgba(18,18,18, 0.37), rgba(18,18,18, 0.20)), url(friends5.jpeg);
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 50px;
+  h1 {
+    color: white;
+    font-size: 55px;
+  }
+}
+
+#project-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  h3 {
+    color: white;
+    font-weight: lighter;
+  }
+  input {
+    width: 60%;
+    height: 45px;
+    font-size: 16px;
+    background: #eeeeee;
+    border: 2px solid $violet;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#step1 {
+  height: 450px;
+  margin: 0;
+  padding: 20px 30px;
+  margin-left: 40px;
+  h1 {
+    color: $violet;
+  }
+  input {
+    border: 2px solid $violet;
+    border-radius: 5px;
+    height: 35px;
+    width: 350px;
+    padding: 10px;
+    background: #eeeeee;
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#step2 {
+  height: 400px;
+  margin: 0;
+  margin-left: 40px;
+  padding: 30px;
+  h1 {
+    color: $violet;
+  }
+  input {
+    border: 2px solid $violet;
+    border-radius: 5px;
+    height: 35px;
+    width: 310px;
+    padding: 10px;
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#step3 {
+  height: 400px;
+  margin: 0;
+  margin-left: 40px;
+  padding: 30px;
+  h1 {
+    color: $violet;
+  }
+  p {
+    width: 500px;
+  }
+  input {
+    border: 2px solid $violet;
+    border-radius: 5px;
+    height: 35px;
+    width: 200px;
+    padding: 10px;
+    background: #eeeeee;
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#add-email {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0px;
+}
+
+#show-emails {
+  h4 {
+    border-bottom: 5px solid $violet;
+    padding-top: 10px;
+  }
+  li {
+    list-style-type: none;
+    padding: 4px;
+    margin-top: 10px;
+    border: 2px solid $violet;
+    border-radius: 5px;
+    background: rgba(114,105,2014, 0.3);
+    font-size: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#submit-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    color: white;
+  }
+  input {
+    background: #515055;
+    color: white;
+    border: 1px solid #515055;
+    border-radius: 50px;
+    padding: 5px 50px;
+    text-align: center;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+
+

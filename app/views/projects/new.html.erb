@@ -1,27 +1,30 @@
-<div class="banner-size-opacity">
-  <h1>Invite your crew.</h1>
-  <h1>Kick off your party.</h1>
+<div class="banner-size-opacity" id="new-project-banner">
+  <h1>Invite your crew.<br>Kick off your party.</h1>
 </div>
 <%= simple_form_for @project do |f| %>
-  <div class="separator-gradient">
+  <div class="separator" id="project-name">
     <h3>New project name:</h3>
     <%= f.input_field :name %>
   </div>
-  <div class="separator-gradient"></div>
-  <div>
-    <h1>Step 1.</h1>
-    <h3><i class="fas fa-users"></i> Invite all participants:</h3>
-    <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
-    <input type="text" name=email id="email-input">
-    <p class="btn btn-primary" id="add-email" href="#">add</p>
-    <div id="hidden-emails"></div>
-    <div>
-      <h4>List of e-mails:</h4>
-      <ul id="emails-list">
-      </ul>
+  <div id="step1" class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <h1>Step 1.</h1>
+        <h3><i class="fas fa-users"></i> Invite all participants:</h3>
+        <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?</p>
+        <input type="text" name=email id="email-input">
+        <p class="button_primary" id="add-email" href="#">add</p>
+        <div id="hidden-emails"></div>
+      </div>
+      <div class="col-xs-12 col-md-4"></div>
+      <div class="col-xs-12 col-md-4" id="show-emails">
+        <h4>List of e-mails:</h4>
+        <ul id="emails-list">
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="separator-gradient"></div>
+  <div class="separator small"></div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-4">
@@ -35,7 +38,7 @@
       </div>
     </div>
   </div>
-  <div class="separator-gradient"></div>
+  <div class="separator small"></div>
   <div>
     <h1>Step 3.</h1>
     <h3><i class="fas fa-hand-holding-usd"></i> Define a maximum budget per person</h3>

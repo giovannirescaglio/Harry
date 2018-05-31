@@ -1,0 +1,75 @@
+#new-project-banner {
+  background-image: linear-gradient(rgba(18,18,18, 0.37), rgba(18,18,18, 0.20)), url(friends5.jpeg);
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 50px;
+  h1 {
+    color: white;
+    font-size: 55px;
+  }
+}
+
+#project-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  h3 {
+    color: white;
+    font-weight: lighter;
+  }
+  input {
+    width: 60%;
+    height: 45px;
+    font-size: 16px;
+    padding: 10px;
+    color: gray;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#step1 {
+  height: 450px;
+  margin: 0;
+  padding: 20px 50px;
+  h1 {
+    color: $violet;
+  }
+  input {
+    border: 2px solid $violet;
+    border-radius: 5px;
+    height: 35px;
+    width: 350px;
+    padding: 10px;
+    color: black;
+    font-size: 16px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}
+
+#add-email {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+
+#show-emails {
+  h4 {
+    border-bottom: 5px solid $violet;
+    padding-top: 10px;
+  }
+  li {
+    list-style-type: none;
+    padding: 4px;
+    margin-top: 10px;
+    border: 2px solid $violet;
+    border-radius: 5px;
+    background: rgba(114,105,2014, 0.3);
+    font-size: 16px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  }
+}

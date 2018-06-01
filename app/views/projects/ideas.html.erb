@@ -2,7 +2,7 @@
   <h2>What do you have in mind?</h2>
   <div id="form-div">
     <%= simple_form_for @activity do |f| %>
-        <%= f.input_field :name, :placeholder => "ex: Photoshoot" %>
+        <%= f.input_field :name, :placeholder => "ex: Lisbon" %>
         <input type="text" name="project" class="hidden" value= <%= @project.id %>>
         <%= f.select :category, Category: ["Destination", "Day Activity", "Night Activity"] %>
       <%= f.submit 'add', class: "button_secondary", id: "activity_submit" %>

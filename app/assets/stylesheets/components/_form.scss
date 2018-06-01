@@ -1,9 +1,8 @@
 .signupcontainer {
   background-color: #EDEBEB;
   width: 500px;
-  height: 700px;
   opacity: 1;
-  margin: 20px;
+  margin: auto;
   padding: 40px 80px;
   text-align: center;
   border-radius: 5px;
@@ -41,9 +40,8 @@ body h2 {
 .logincontainer {
   background-color: #EDEBEB;
   width: 500px;
-  height: 700px;
   opacity: 1;
-  margin: 20px;
+  margin: auto;
   padding: 80px 40px 80px 40px;
   text-align: center;
   border-radius: 5px;
@@ -58,15 +56,12 @@ body h2 {
 }
 
 .formbanner {
-background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url("friends6bisbis.jpg") ;
+  background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url("friends6bisbis.jpg") ;
   color: black;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 70px;
+  padding: 2em;
   h1 {
   width: 50%;
   font-size: 80px;
@@ -85,10 +80,7 @@ background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 70px;
+  padding: 2em;
   h1 {
   width: 50%;
   font-size: 80px;
@@ -99,4 +91,18 @@ background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url
   a {
     width: 250px;
   }
+}
+
+#close_btn_signup {
+  position: relative;
+  left: 210px;
+  bottom: 200px;
+  color:black;
+}
+
+#close_btn_login {
+  position: relative;
+  left: 210px;
+  bottom: 240px;
+  color:black;
 }

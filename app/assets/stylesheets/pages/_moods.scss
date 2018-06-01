@@ -56,3 +56,51 @@
   background:image-url('chillparty.jpg');
   background-size: cover;
 }
+
+#budget-input {
+  padding-right: 50px;
+  padding-top: 10px;
+}
+
+#weekend-choices {
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.violet-p {
+  color: $violet;
+}
+
+#guest_budget {
+  border: 2px solid $violet;
+  border-radius: 5px;
+  height: 35px;
+  width: 300px;
+  padding: 10px;
+  background: #eeeeee;
+  color: black;
+  font-size: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+#submit_guest_budget {
+  padding: 5px 30px;
+}
+
+#weekends-list {
+  width: 550px;
+}
+
+#weekend-option {
+  width: 170px;
+  padding: 4px;
+  margin: 5px;
+  border: 2px solid $violet;
+  border-radius: 5px;
+  background: rgba(114,105,2014, 0.3);
+  font-size: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+

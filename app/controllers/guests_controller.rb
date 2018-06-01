@@ -1,19 +1,17 @@
 class GuestsController < ApplicationController
 def preferences
   @guest = Guest.find(params[:id])
+  @project = @guest.project
   authorize @guest
-  @admin = @guest.user.first_name.capitalize
+  @admin = @project.user.first_name.capitalize
   @week_ends = @guest.project.week_ends
 end
 
 def update
   @guest = Guest.find(params[:id])
   authorize @guest
-  if @guest.update(guest_params)
-    redirect_to step2_project_path
-  else
-    render :preferences
-  end
+  @guest.update(guest_params)
+  redirect_to preferences_guest_path(@guest)
 end
 
 private

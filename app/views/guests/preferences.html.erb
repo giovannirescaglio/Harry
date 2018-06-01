@@ -1,28 +1,41 @@
-<div class="wrapper">
-  <h1>Question 4</h1>
-  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
-  </p>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <h3><i class="far fa-money-bill-alt"></i> Define your budget</h3>
-      <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
-      </p>
-      <p><%= @admin %> has set the maximum budget per person to: 500€</p>
-      <%= simple_form_for @guest do |f| %>
-        <%= f.input :budget, placeholder: '> My average budget for the week-end' %>
-        <%= f.submit 'test' %>
-      <% end %>
+<div class="mood-page">
+  <div class="question-title">
+    <h1>Question 4</h1>
+    <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6" id="budget-input">
+        <h3><i class="fas fa-hand-holding-usd"></i></i> Define your budget</h3>
+        <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+        </p>
+        <p class="violet-p"><%= @admin %> has set the maximum budget/person to: <%= @project.max_budget %>€</p>
+        <%= simple_form_for @guest do |f| %>
+          <%= f.input :budget, placeholder: 'ex: 300€' %>
+          <%= f.submit 'submit', class: "button_secondary", id: "submit_guest_budget" %>
+        <% end %>
+      </div>
+      <div class="col-xs-6 container" id="weekend-choices">
+        <div class="row">
+          <h3><i class="far fa-calendar-alt"></i> Confirm your schedule</h3>
+          <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+          </p>
+          <p class="violet-p">Please click on the week-ends when you plan to be available:</p>
+        </div>
+        <div class="row container" id="weekends-list">
+          <div class="row">
+            <% @week_ends.each do |week_end| %>
+            <div class="col-xs-6" id="weekend-option">
+              <%= week_end.start_date.strftime('%b, %d') %> to <%= week_end.end_date.strftime('%b, %d') %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <h3><i class="far fa-calendar"></i> Confirm your schedule</h3>
-      <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
-      </p>
-      <p>Please click on the week-ends when you plan to be available.</p>
-      <% @week_ends.each do |week_end| %>
-      <li><%= week_end.start_date.strftime('%b, %d') %> to <%= week_end.end_date.strftime('%b, %d') %></li>
-      <% end %>
-    </div>
+  </div>
+  <div id="ideas-done">
+    <%= link_to "done", step2_project_path(@project), class: "button_primary" %>
   </div>
 </div>

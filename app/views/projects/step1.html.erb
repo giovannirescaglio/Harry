@@ -1,8 +1,12 @@
 <div class="wrapper">
   <h1><%= @project.name.capitalize %></h1>
-  <div><%#= image_tag (@project.guests.user.picture) %>
+  <div>
     <% @guests.each do |guest| %>
-      <%= image_tag (guest.user.picture) %>
+      <%if guest.user.picture.present? %>
+        <%= cl_image_tag guest.user.picture, width: 10 %>
+      <% else %>
+        <%= image_tag 'avatar1.png' %>
+      <% end %>
     <% end %>
   </div>
 </div>

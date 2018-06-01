@@ -14,6 +14,18 @@ img{
   width: 7%;
   }
 }
+.banner-wrapper{
+
+}
+
+.results{
+  position: relative;
+  left: 1100px;
+  top: 0px;
+  img{
+    width: 3%;
+  }
+}
 
 .avatar-step2{
   margin: 20px;
@@ -38,9 +50,24 @@ img{
 
 }
 
+.step2-images{
+  img{
+border-radius: 3px;
+  }
+}
+
 .btn-step2 {
 width: 20%;
 position: relative;
 right: -790px;
+bottom: 30px;
+a{
+text-decoration: none;
+color: white;
+a:hover{
+  text-decoration: none;
+  color: white;
+  }
+  }
 }
 

@@ -1,6 +1,7 @@
 
 <div class="banner-step2">
     <h1><%= @project.name.capitalize %></h1>
+   <div class="banner-wrapper">
     <div class="avatar-step2">
       <% @guests.each do |guest| %>
         <%if guest.user.picture.present? %>
@@ -10,6 +11,11 @@
         <% end %>
       <% end %>
     </div>
+    <div class="results">
+    <%= image_tag 'budget_icon2.png' %>
+    <%= image_tag 'calendar_icon2.png' %>
+    </div>
+   </div>
 </div>
 
 
@@ -24,7 +30,7 @@
 
   </div>
   <div class="step2-moods">
-    <h3>Moods results</h3>
+    <h3>Moods results:</h3>
       <div class="step2-images">
       <%= image_tag 'fancy2.jpg' %>
       <%= image_tag 'clubing3.jpg' %>
@@ -40,8 +46,10 @@
 <br>
 <br>
 
+<%# @moods.each do |mood| %>
 
+<%# end %>
 
-<div class="btn-step2 button_primary">
+<div class="button_primary btn-step2">
   <%= link_to 'Start', ideas_project_path(@project) %>
 </div>

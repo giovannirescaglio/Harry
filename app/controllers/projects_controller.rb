@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:step1]
+
   def step1
-    @project = Project.find(params[:id])
     @guests = @project.guests
   end
 
@@ -65,6 +66,10 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
   def project_params
     params.require(:project).permit(:name, :start_date, :end_date, :max_budget)

@@ -1,30 +1,56 @@
 class MoodsController < ApplicationController
+  before_action :set_project, only: [:scenery, :lifestyle, :party, :create]
+  before_action :set_mood, only: [:lifestyle, :party, :update]
+
   def scenery
-    @project = Project.find(params[:project_id])
-    @moods = Mood.new
+    @mood = Mood.new
   end
 
   def lifestyle
-
   end
 
   def party
-
   end
 
   def create
-    @project = Project.find(params[:project_id])
-    if params[:wild].present?
-      @moods = Mood.new(wild: params[:wild])
-    elsif params[:city].present?
-      @moods = Mood.new(city: params[:city])
+    @mood = Mood.new(mood_params)
+    @mood.project = @project
+    @mood.user = current_user
+    if @mood.save
+      redirect_to lifestyle_project_moods_path(@project)
+    else
+      render :scenery
     end
-    @moods.project = @project
-    @moods.user = current_user
-    @moods.save!
   end
 
   def update
-    # @mood = Mood.find(params[:id])
+    mood_step = params[:mood][:step]
+    next_step = Mood::TRANSITIONS[mood_step]
+    if next_step.nil?
+      guest = current_user.guests.find_by(project_id: @project)
+      url = preferences_guest_path(guest)
+    else
+      url = polymorphic_url([next_step.to_sym, @project, Mood])
+    end
+    if @mood.update(mood_params)
+      redirect_to url
+    else
+      render mood_step.to_sym
+    end
+  end
+
+  private
+
+  def set_project
+    @project = Project.find(params[:project_id])
+  end
+
+  def set_mood
+    set_project
+    @mood = @project.moods.where(user_id: current_user).last
+  end
+
+  def mood_params
+    params.require(:mood).permit(:wild, :city, :fancy, :trashy, :clubbing, :chilling, :project_id, :user_id)
   end
 end

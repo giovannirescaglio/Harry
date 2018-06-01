@@ -11,8 +11,12 @@
         <% end %>
       <% end %>
     </div>
-    <div class="results">
+    <div class="results-budget">
+      <%= @average_budget%>/€pers
     <%= image_tag 'budget_icon2.png' %>
+    </div>
+    <div class="results-date">
+      Jul, 06 to Jul, 08
     <%= image_tag 'calendar_icon2.png' %>
     </div>
    </div>
@@ -28,13 +32,22 @@
   <p>Minimum 3 suggestions</p>
   <p>Estimated time to complete: 5 minutes</p>
 
-  </div>
+</div>
   <div class="step2-moods">
     <h3>Moods results:</h3>
-      <div class="step2-images">
-      <%= image_tag 'fancy2.jpg' %>
-      <%= image_tag 'clubing3.jpg' %>
-      <%= image_tag 'city.jpg' %>
+      <div class="step2-moods-wrapper">
+        <div class="step2-images">
+          <%= image_tag 'fancy2.jpg' %>
+          <div><%= @moods_scenery%> <%= @moods_lifestyle_percentage %></div>
+        </div>
+        <div class="step2-images">
+            <%= image_tag 'clubing3.jpg' %>
+            <div><%= @moods_lifestyle%> <%= @moods_lifestyle_percentage %></div>
+        </div>
+        <div class="step2-images">
+            <%= image_tag 'city.jpg' %>
+            <div><%= @moods_party%> <%= @moods_party_percentage %></div>
+        </div>
       </div>
   </div>
 </div>

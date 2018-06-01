@@ -18,15 +18,30 @@ img{
 
 }
 
-.results{
+.results-budget{
   position: relative;
   left: 1100px;
   top: 0px;
+  margin-bottom: 5px;
+  color: white;
   img{
     width: 3%;
   }
 }
+.results-date{
+  position: relative;
+  left: 1060px;
+  top: 0px;
+  color: white;
+  img{
+    width: 3%;
+  }
 
+}
+
+.step2-moods-wrapper{
+display: flex;
+}
 .avatar-step2{
   margin: 20px;
 }
@@ -53,6 +68,7 @@ img{
 .step2-images{
   img{
 border-radius: 3px;
+width: 75%;
   }
 }
 

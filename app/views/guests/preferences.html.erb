@@ -20,6 +20,9 @@
       <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
       </p>
       <p>Please click on the week-ends when you plan to be available.</p>
+      <% @week_ends.each do |week_end| %>
+      <li><%= week_end.start_date.strftime('%b, %d') %> to <%= week_end.end_date.strftime('%b, %d') %></li>
+      <% end %>
     </div>
   </div>
 </div>

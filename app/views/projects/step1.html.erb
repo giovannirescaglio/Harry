@@ -1,12 +1,9 @@
+
 <div class="banner-step2">
     <h1><%= @project.name.capitalize %></h1>
     <div class="avatar-step2">
-      <% @guests.each do |guest| %>
-        <%if guest.user.picture.present? %>
-          <%= cl_image_tag guest.user.picture, width: 10 %>
-          <% else %>
+      <% @guests.each do |guest| %>         
           <%= image_tag 'avatar1.png' %>
-        <% end %>
       <% end %>
     </div>
 </div>

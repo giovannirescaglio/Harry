@@ -4,6 +4,9 @@
 
       <div id="logo"> <%= image_tag("logo_black.png") %> </div>
       <h2>Hey there! </h2>
+      <%= link_to root_path, id: "close_btn_signup" do %>
+        <i class="far fa-times-circle fa-lg"></i>
+      <% end %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 

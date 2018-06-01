@@ -1,26 +1,28 @@
-<div class="wrapper">
-  <h1>Question 1</h1>
-  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
-  </p>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="card" style="width:500px;height:500px;background:url('http://via.placeholder.com/500x500');">
-        <%= simple_form_for [@project, @mood] do |f| %>
-          <%= f.hidden_field :step, value: 'scenery' %>
-          <%= f.hidden_field :wild, value: true %>
-          <%= f.submit 'Into the Wild' %>
-        <% end %>
+<div class="mood-page">
+  <div class="question-title">
+    <h1>Question 1</h1>
+    <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+    </p>
+  </div>
+  <div class="container mood-choices">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="mood-card" id="mood-wild">
+          <%= simple_form_for [@project, @mood] do |f| %>
+            <%= f.hidden_field :step, value: 'scenery' %>
+            <%= f.hidden_field :wild, value: true %>
+            <%= f.submit 'Into the Wild?', class: "button_secondary" %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-6">
-      <div class="card" style="width:500px;height:500px;background:url('http://via.placeholder.com/500x500');">
-        <%= simple_form_for [@project, @mood] do |f| %>
-          <%= f.hidden_field :step, value: 'scenery' %>
-          <%= f.hidden_field :city, value: true %>
-          <%= f.submit 'City Break?' %>
-        <% end %>
+      <div class="col-xs-6">
+        <div class="mood-card" id="mood-city">
+          <%= simple_form_for [@project, @mood] do |f| %>
+            <%= f.hidden_field :step, value: 'scenery' %>
+            <%= f.hidden_field :city, value: true %>
+            <%= f.submit 'City Break?', class: "button_secondary" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

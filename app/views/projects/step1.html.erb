@@ -1,17 +1,20 @@
-<div class="wrapper">
-  <h1><%= @project.name.capitalize %></h1>
-  <div>
-    <% @guests.each do |guest| %>
-        <%= image_tag 'avatar1.png' %>
-    <% end %>
-  </div>
+
+<div class="banner-step2">
+    <h1><%= @project.name.capitalize %></h1>
+    <div class="avatar-step2">
+      <% @guests.each do |guest| %>         
+          <%= image_tag 'avatar1.png' %>
+      <% end %>
+    </div>
 </div>
-<div class="container">
-  <h2>Step 1</h2>
+<div class="step1-text">
+  <h1>Step 1</h1>
   <h3>Setting the mood</h3>
   <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
   </p>
   <h4>4 questions</h4>
   <h4>Estimated time to complete: 3 minutes</h4>
-  <%= link_to 'Start', scenery_project_moods_path(@project) %>
 </div>
+<div id="go-next">
+    <%= link_to 'Start', scenery_project_moods_path(@project), class: "button_primary" %>
+  </div>

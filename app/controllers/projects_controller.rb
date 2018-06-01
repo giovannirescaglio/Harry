@@ -10,7 +10,26 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
     @guests = @project.guests
+    @budgets = @guests.map{ |g| g.budget}
+    @average_budget = @budgets.sum/(@budgets.count)
+
+    @number_of_moods = @project.moods.count
+    @moods_city = @project.moods.where(city: true).count.fdiv(@number_of_moods)
+    @moods_wild = @project.moods.where(wild: true).count.fdiv(@number_of_moods)
+    @moods_scenery = @moods_city >= @moods_wild ? "city" : "wild"
+    @moods_scenery_percentage = @moods_city >= @moods_wild ? @moods_city : @moods_wild
+
+    @moods_fancy = @project.moods.where(fancy: true).count.fdiv(@number_of_moods)
+    @moods_trashy = @project.moods.where(trashy: true).count.fdiv(@number_of_moods)
+    @moods_lifestyle = @moods_fancy >= @moods_trashy ? "fancy" : "trashy"
+    @moods_lifestyle_percentage = @moods_fancy >= @moods_trashy ? @moods_fancy : @moods_trashy
+
+    @moods_clubbing = @project.moods.where(clubbing: true).count.fdiv(@number_of_moods)
+    @moods_chilling = @project.moods.where(chilling: true).count.fdiv(@number_of_moods)
+    @moods_party = @moods_clubbing >= @moods_chilling ? "clubbing" : "chilling"
+    @moods_party_percentage = @moods_clubbing >= @moods_chilling ? @moods_clubbing : @moods_chilling
   end
+
 
   def find_weekends(start_date, end_date)
     week_ends = []

@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
     @guests = @project.guests
-    @budgets = @guests.map{ |g| g.budget}
+    @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
 
     @number_of_moods = @project.moods.count

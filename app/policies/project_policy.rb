@@ -25,12 +25,24 @@ class ProjectPolicy < ApplicationPolicy
     true
   end
 
+  def scenery?
+    step1?
+  end
+
   def step2?
     true
   end
 
+  def lifestyle?
+    step2?
+  end
+
   def step3?
     true
+  end
+
+  def party?
+    step3?
   end
 
   def votes?
@@ -38,6 +50,10 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def results?
+    true
+  end
+
+   def update?
     true
   end
 end

@@ -2,7 +2,8 @@ class GuestsController < ApplicationController
 def preferences
   @guest = Guest.find(params[:id])
   authorize @guest
-  @admin = current_user.guests.find_by(role: 'admin')
+  @admin = @guest.user.first_name.capitalize
+  @week_ends = @guest.project.week_ends
 end
 
 def update
@@ -17,7 +18,7 @@ end
 
 private
 
-def guest_params
-    params.require(:guest).permit(:budget)
+  def guest_params
+      params.require(:guest).permit(:budget)
   end
 end

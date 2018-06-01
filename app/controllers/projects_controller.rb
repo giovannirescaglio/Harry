@@ -54,6 +54,7 @@ class ProjectsController < ApplicationController
         @weekend.save
       end
     end
+    redirect_to step1_project_path(@project)
   end
 
   def ideas

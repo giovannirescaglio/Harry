@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def step1
     @guests = @project.guests
+    authorize @project
   end
 
   def step2

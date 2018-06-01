@@ -4,16 +4,20 @@ class MoodsController < ApplicationController
 
   def scenery
     @mood = Mood.new
+    authorize @mood
   end
 
   def lifestyle
+    authorize @mood
   end
 
   def party
+    authorize @mood
   end
 
   def create
     @mood = Mood.new(mood_params)
+    authorize @mood
     @mood.project = @project
     @mood.user = current_user
     if @mood.save
@@ -24,6 +28,7 @@ class MoodsController < ApplicationController
   end
 
   def update
+    authorize @mood
     mood_step = params[:mood][:step]
     next_step = Mood::TRANSITIONS[mood_step]
     if next_step.nil?

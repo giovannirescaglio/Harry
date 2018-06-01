@@ -1,11 +1,13 @@
 class GuestsController < ApplicationController
 def preferences
   @guest = Guest.find(params[:id])
+  authorize @guest
   @admin = current_user.guests.find_by(role: 'admin')
 end
 
 def update
   @guest = Guest.find(params[:id])
+  authorize @guest
   if @guest.update(guest_params)
     redirect_to step2_project_path
   else

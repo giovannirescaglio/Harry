@@ -66,6 +66,12 @@ class ProjectsController < ApplicationController
   def destroy
   end
 
+  def step3
+    @project = Project.find(params[:id])
+    authorize @project
+    @guests = @project.guests
+  end
+
   private
 
   def set_project

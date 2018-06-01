@@ -1,0 +1,25 @@
+<% a = ['avatar1.png', 'avatar2.png', 'avatar3.png', 'avatar4.png', 'avatar5.png'] %>
+<div id="banner_waiting_room">
+  <div id="waiting_room_container" >
+    <div id="logo"> <%= image_tag("logo_black.png") %> </div>
+    <h2> Thank you for completing Step 2!</h2>
+    <br>
+    <h3> You can sit back and relax while the rest of your team gets here.
+        We will notify you when step 3 is ready.</h3>
+        <br>
+        <br>
+        <div id="waiting_room_avatar">
+          <% @guests.each do |guest| %>
+            <%if guest.user.picture.present? %>
+              <%= cl_image_tag guest.user.picture, width: 10 %>
+              <% else %>
+              <%= image_tag a.sample %>
+            <% end %>
+          <% end %>
+        </div>
+      <h3 > Team completion score:</h3>
+      <h3 id="score"> 66% </h3>
+    </div>
+  </div>
+</div>
+

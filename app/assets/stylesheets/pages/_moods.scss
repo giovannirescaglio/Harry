@@ -1,0 +1,58 @@
+.mood-page {
+  height: calc(100vh - 70px);
+}
+
+.question-title {
+  padding: 20px 50px;
+  h1 {
+    color: $violet;
+  }
+}
+
+.mood-choices {
+}
+
+.mood-card {
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  border: 5px solid #E4E4E4;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  input {
+    width: 300px;
+  }
+}
+
+#mood-wild {
+  background:image-url('wild5.jpg');
+  background-size: cover;
+}
+
+#mood-city {
+  background:image-url('city.jpg');
+  background-size: cover;
+}
+
+#mood-fancy {
+  background:image-url('fancy2.jpg');
+  background-size: cover;
+}
+
+#mood-trashy {
+  background:image-url('springbreak.jpg');
+  background-size: cover;
+}
+
+#mood-club {
+  background:image-url('clubing3.jpg');
+  background-size: cover;
+}
+
+#mood-chill {
+  background:image-url('chillparty.jpg');
+  background-size: cover;
+}

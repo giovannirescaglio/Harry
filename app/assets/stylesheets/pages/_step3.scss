@@ -1,3 +1,16 @@
+#waiting_room_container {
+background-color: white;
+  width: 75%;
+  height: auto;
+  opacity: 1;
+  margin: 20px;
+  padding: 40px 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+
 #waiting_room_avatar{
   margin: 20px;
   img{
@@ -8,6 +21,8 @@
 }
 #score {
   color:#7269CC;
+  font-size: 36px;
+  font-weight: bolder;
 }
 #banner_waiting_room {
   color: black;

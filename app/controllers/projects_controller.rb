@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:step1]
+  before_action :set_project, only: [:step1, :step2, :ideas, :step3, :votes ]
 
   def step1
     @guests = @project.guests
@@ -7,7 +7,6 @@ class ProjectsController < ApplicationController
   end
 
   def step2
-    @project = Project.find(params[:id])
     authorize @project
     @guests = @project.guests
     @budgets = @guests.map{ |g| g.budget.to_i}
@@ -77,7 +76,6 @@ class ProjectsController < ApplicationController
   end
 
   def ideas
-    @project = Project.find(params[:id])
     authorize @project
     @destination = Destination.new
     @activity = Activity.new
@@ -87,9 +85,13 @@ class ProjectsController < ApplicationController
   end
 
   def step3
-    @project = Project.find(params[:id])
     authorize @project
     @guests = @project.guests
+  end
+
+  def votes
+    authorize @project
+    @activities = @project.activities
   end
 
   private

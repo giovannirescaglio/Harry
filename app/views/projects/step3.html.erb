@@ -1,21 +1,64 @@
 <% a = ['avatar1.png', 'avatar2.png', 'avatar3.png', 'avatar4.png', 'avatar5.png'] %>
-<div id="banner_waiting_room">
-  <div id="waiting_room_container" >
-    <div id="logo"> <%= image_tag("logo_black.png") %> </div>
-    <h2> Thank you for completing Step 2!</h2>
-    <br>
-    <h3> You can sit back and relax while the rest of your team gets here.
-        We will notify you when step 3 is ready.</h3>
-        <br>
-        <br>
-        <div id="waiting_room_avatar">
-          <% @guests.each do |guest| %>
-              <%= image_tag a.sample %>
-          <% end %>
-        </div>
-      <h3 > Team completion score:</h3>
-      <h3 id="score"> 66% </h3>
+
+<div class="banner-step2">
+    <h1><%= @project.name.capitalize %></h1>
+   <div class="banner-wrapper">
+    <div class="avatar-step2">
+      <% @guests.each do |guest| %>
+          <%= image_tag a.sample %>
+      <% end %>
     </div>
-  </div>
+    <div class="results-budget">
+      <%= @average_budget%>/€pers
+    <%= image_tag 'budget_icon2.png' %>
+    </div>
+    <div class="results-date">
+      Jul, 06 to Jul, 08
+    <%= image_tag 'calendar_icon2.png' %>
+    </div>
+   </div>
 </div>
 
+
+<div class="step2-description">
+  <div class="step2-text">
+  <h2>Step 3.</h2>
+  <h3>Vote for the best ideas</h3>
+  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+  </p>
+  <p>Estimated time to complete: 3 minutes</p>
+
+</div>
+  <div class="step2-moods">
+    <h3>Moods results:</h3>
+      <div class="step2-moods-wrapper">
+        <div class="step2-images">
+          <%if @moods_city >= @moods_wild %>
+            <%= image_tag 'city.jpg' %>
+            <%else %>
+            <%= image_tag 'wild5.jpg' %>
+          <% end %>
+          <div class="percentage"> <%= number_to_percentage(@moods_scenery_percentage, precision: 0) %> <%= @moods_scenery%> </div>
+        </div>
+        <div class="step2-images">
+            <%if @moods_fancy >= @moods_trashy %>
+              <%= image_tag 'fancy2.jpg' %>
+              <%else %>
+              <%= image_tag 'springbreak.jpg' %>
+            <% end %>
+            <div class="percentage"> <%= number_to_percentage(@moods_lifestyle_percentage, precision: 0) %> <%= @moods_lifestyle%> </div>
+        </div>
+        <div class="step2-images">
+            <%if @moods_clubbing >= @moods_chilling %>
+              <%= image_tag 'clubbing3.jpg' %>
+              <%else %>
+              <%= image_tag 'chillparty.jpg' %>
+            <% end %>
+            <div class="percentage"> <%= number_to_percentage(@moods_party_percentage, precision: 0) %> <%= @moods_party%> </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="button_primary btn-step2">
+  <%= link_to 'Start', votes_project_path(@project) %>
+</div>

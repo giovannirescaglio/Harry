@@ -1,7 +1,8 @@
 <div class="col-xs-10">
   <div class = "row">
     <h2>Click on the ideas you like </h2>
-    <% @activities.each do |activity| %>
+    <p> Day Activities </p>
+    <% @day_activities.each do |activity| %>
        <div class = "button_secondary" id="day-activity">
         <h4><%= activity.name %>
           <%= link_to like_activity_path(activity), method: :put do %>
@@ -16,8 +17,26 @@
 
 <div class="col-xs-10">
   <div class = "row">
+    <h2>Click on the ideas you like </h2>
+    <p> Night Activities </p>
+    <% @night_activities.each do |activity| %>
+       <div class = "button_secondary" id="day-activity">
+        <h4><%= activity.name %>
+          <%= link_to like_activity_path(activity), method: :put do %>
+            <i class="fas fa-thumbs-up"></i>
+            <%= activity.get_upvotes.size %>
+          <% end %>
+        </h4>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-xs-10">
+  <div class = "row">
+    <p> Destinations </p>
     <% @destinations.each do |destination| %>
-       <div class = "button_secondary" id="destination">
+       <div class = "button_secondary" id="day-activity">
         <h4><%= destination.name %>
           <%= link_to like_destination_path(destination), method: :put do %>
             <i class="fas fa-thumbs-up"></i>

@@ -5,9 +5,9 @@ class ActivitiesController < ApplicationController
     authorize @activity
     @destination = Destination.new
     if activities_params[:category] == "Day Activity"
-      @activity = Activity.create(name: activities_params[:name], category: "Day", project_id: params[:project].to_i)
+      @activity = Activity.create(name: activities_params[:name], category: "day", project_id: params[:project].to_i)
     elsif activities_params[:category] == "Night Activity"
-      @activity = Activity.create(name: activities_params[:name], category: "Night", project_id: params[:project].to_i)
+      @activity = Activity.create(name: activities_params[:name], category: "night", project_id: params[:project].to_i)
     elsif activities_params[:category] == "Destination"
       @destination = Destination.create(name: activities_params[:name], project_id: params[:project].to_i)
     end

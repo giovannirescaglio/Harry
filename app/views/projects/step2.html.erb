@@ -1,10 +1,11 @@
+<% a = ['avatar1.png', 'avatar2.png', 'avatar3.png', 'avatar4.png', 'avatar5.png'] %>
 
 <div class="banner-step2">
     <h1><%= @project.name.capitalize %></h1>
    <div class="banner-wrapper">
     <div class="avatar-step2">
       <% @guests.each do |guest| %>
-          <%= image_tag 'avatar1.png' %>
+          <%= image_tag a.sample %>
       <% end %>
     </div>
     <div class="results-budget">
@@ -33,32 +34,32 @@
     <h3>Moods results:</h3>
       <div class="step2-moods-wrapper">
         <div class="step2-images">
-          <%= image_tag 'fancy2.jpg' %>
-          <div><%= @moods_scenery%> <%= @moods_lifestyle_percentage %></div>
-        </div>
-        <div class="step2-images">
-            <%= image_tag 'clubing3.jpg' %>
-            <div><%= @moods_lifestyle%> <%= @moods_lifestyle_percentage %></div>
-        </div>
-        <div class="step2-images">
+          <%if @moods_city >= @moods_wild %>
             <%= image_tag 'city.jpg' %>
-            <div><%= @moods_party%> <%= @moods_party_percentage %></div>
+            <%else %>
+            <%= image_tag 'wild5.jpg' %>
+          <% end %>
+          <div class="percentage"> <%= number_to_percentage(@moods_scenery_percentage, precision: 0) %> <%= @moods_scenery%> </div>
+        </div>
+        <div class="step2-images">
+            <%if @moods_fancy >= @moods_trashy %>
+              <%= image_tag 'fancy2.jpg' %>
+              <%else %>
+              <%= image_tag 'springbreak.jpg' %>
+            <% end %>
+            <div class="percentage"> <%= number_to_percentage(@moods_lifestyle_percentage, precision: 0) %> <%= @moods_lifestyle%> </div>
+        </div>
+        <div class="step2-images">
+            <%if @moods_clubbing >= @moods_chilling %>
+              <%= image_tag 'clubbing3.jpg' %>
+              <%else %>
+              <%= image_tag 'chillparty.jpg' %>
+            <% end %>
+            <div class="percentage"> <%= number_to_percentage(@moods_party_percentage, precision: 0) %> <%= @moods_party%> </div>
         </div>
       </div>
   </div>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<%# @moods.each do |mood| %>
-
-<%# end %>
-
 <div class="button_primary btn-step2">
   <%= link_to 'Start', ideas_project_path(@project) %>
 </div>

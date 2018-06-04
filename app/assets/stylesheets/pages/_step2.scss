@@ -20,7 +20,7 @@ img{
 .results-budget{
   position: relative;
   left: 1100px;
-  top: 0px;
+  top: -30px;
   margin-bottom: 5px;
   color: white;
   img{
@@ -30,7 +30,7 @@ img{
 .results-date{
   position: relative;
   left: 1060px;
-  top: 0px;
+  top: -30px;
   color: white;
   img{
     width: 3%;
@@ -48,6 +48,7 @@ display: flex;
 .step2-description{
   display: flex;
   flex-direction: row;
+  margin-bottom: 100px;
 
 }
 
@@ -69,7 +70,13 @@ img{
   img{
 border-radius: 3px;
 width: 75%;
+border: 5px solid #E4E4E4;
+box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
   }
+}
+
+.percentage {
+padding: 10px;
 }
 
 .btn-step2 {

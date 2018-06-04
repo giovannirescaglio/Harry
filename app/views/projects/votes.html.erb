@@ -1,14 +1,36 @@
-<div>
-  <h2>Click on the ideas you like </h2>
-  <% @activities.each do |activity| %>
-    <h4><%= link_to activity.name %><br>
-      Submitted <%= time_ago_in_words(activity.created_at) %> ago
-      by <%= activity.project.user.email %>
-      <%= link_to like_activity_path(activity), method: :put do %>
-        <i class="fas fa-thumbs-up"></i>
-        <%= activity.get_upvotes.size %>
-      <% end %>
-    </h4>
-  <% end %>
+<div class="col-xs-10">
+  <div class = "row">
+    <h2>Click on the ideas you like </h2>
+    <% @activities.each do |activity| %>
+       <div class = "button_secondary" id="day-activity">
+        <h4><%= activity.name %>
+          <%= link_to like_activity_path(activity), method: :put do %>
+            <i class="fas fa-thumbs-up"></i>
+            <%= activity.get_upvotes.size %>
+          <% end %>
+        </h4>
+        </div>
+    <% end %>
+  </div>
 </div>
+
+<div class="col-xs-10">
+  <div class = "row">
+    <% @destinations.each do |destination| %>
+       <div class = "button_secondary" id="destination">
+        <h4><%= destination.name %>
+          <%= link_to like_destination_path(destination), method: :put do %>
+            <i class="fas fa-thumbs-up"></i>
+            <%= destination.get_upvotes.size %>
+          <% end %>
+        </h4>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
 

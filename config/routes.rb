@@ -25,19 +25,24 @@ Rails.application.routes.draw do
   end
 
   resources :destinations do
-    member { get 'upvote'}
-  end
-
-  resources :activities do
-    member { get 'upvote'}
-  end
-
-  resources :activities do
-    member do
-      put "like", to: "activities#upvote"
-      put "dislike", to: "activities#downvote"
+    member  do
+      get 'upvote'
+      put "like", to: "destinations#upvote"
     end
   end
+
+  resources :activities do
+    member  do
+      get 'upvote'
+      put "like", to: "activities#upvote"
+    end
+  end
+
+  # resources :activities do
+  #   member do
+  #     put "dislike", to: "activities#downvote"
+  #   end
+  # end
 
 
 

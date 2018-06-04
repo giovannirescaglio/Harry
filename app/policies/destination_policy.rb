@@ -36,4 +36,8 @@ class DestinationPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def upvote?
+    true
+  end
 end

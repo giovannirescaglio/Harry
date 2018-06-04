@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-
   def create
     @activity = Activity.new
     authorize @activity
@@ -12,7 +11,6 @@ class ActivitiesController < ApplicationController
       @destination = Destination.create(name: activities_params[:name], project_id: params[:project].to_i)
     end
     redirect_to ideas_project_path(Project.find(params[:project].to_i))
-
   end
 
   def upvote
@@ -22,12 +20,6 @@ class ActivitiesController < ApplicationController
     @activity.upvote_by current_user
     redirect_to votes_project_path(@project)
   end
-
-  # def downvote
-  #   @activity = Activity.find(params[:id])
-  #   @activity.downvote_by current_user
-  #   redirect_to :back
-  # end
 
 private
 

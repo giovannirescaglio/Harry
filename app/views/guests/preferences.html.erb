@@ -28,6 +28,10 @@
             <% @week_ends.each do |week_end| %>
             <div class="col-xs-6" id="weekend-option">
               <%= week_end.start_date.strftime('%b, %d') %> to <%= week_end.end_date.strftime('%b, %d') %>
+              <%= link_to like_week_end_path(week_end), method: :put do %>
+                <i class="fas fa-thumbs-up"></i>
+                <%= week_end.get_upvotes.size %>
+              <% end %>
             </div>
           <% end %>
           </div>

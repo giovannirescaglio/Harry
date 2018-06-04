@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       collection { get 'party'}
     end
   end
+
   resources :guests, only:[:update] do
     member { get 'preferences'}
   end
@@ -38,13 +39,10 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :activities do
-  #   member do
-  #     put "dislike", to: "activities#downvote"
-  #   end
-  # end
-
-
-
+  resources :week_ends do
+    member do
+      put "like", to: "weekends#upvote"
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

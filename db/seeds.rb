@@ -13,7 +13,6 @@ Guest.destroy_all
 Project.destroy_all
 User.destroy_all
 
-
 # USER SEED
 Tony = User.create!(first_name: "Antoine", last_name: "Goffette", email:"tony@gmail.com", password: "123456")
 Giogio = User.create!(first_name: "Giovanni", last_name: "Rescaglio", email:"giogio@gmail.com", password: "123456")

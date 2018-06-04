@@ -1,0 +1,26 @@
+#votes-rows {
+  border-bottom: 1px solid $violet;
+  padding: 30px 20px;
+  p {
+    font-size: 14px;
+    color: white;
+    position:relative;
+  }
+}
+
+#activity {
+  padding: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.badge-vote {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  top: -16px;
+  right: -61px;
+}

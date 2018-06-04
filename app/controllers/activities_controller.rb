@@ -15,6 +15,20 @@ class ActivitiesController < ApplicationController
 
   end
 
+  def upvote
+    @activity = Activity.find(params[:id])
+    @project = @activity.project
+    authorize @activity
+    @activity.upvote_by current_user
+    redirect_to votes_project_path(@project)
+  end
+
+  # def downvote
+  #   @activity = Activity.find(params[:id])
+  #   @activity.downvote_by current_user
+  #   redirect_to :back
+  # end
+
 private
 
   def activities_params

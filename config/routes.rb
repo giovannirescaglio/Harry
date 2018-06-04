@@ -32,7 +32,12 @@ Rails.application.routes.draw do
     member { get 'upvote'}
   end
 
-
+  resources :activities do
+    member do
+      put "like", to: "activities#upvote"
+      put "dislike", to: "activities#downvote"
+    end
+  end
 
 
 

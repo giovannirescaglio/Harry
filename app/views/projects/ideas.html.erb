@@ -31,11 +31,11 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Day Activities</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "Day").count %> ideas</p>
+      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "day").count %> ideas</p>
     </div>
     <div class="col-xs-10 container">
       <div class="row">
-        <% @project.activities.where(category: "Day").each do |activity| %>
+        <% @project.activities.where(category: "day").each do |activity| %>
           <div class="col-xs-3">
             <div class="button_secondary" id="day-activity"><i class="fas fa-sun"></i> <%= activity.name %></div>
           </div>
@@ -46,11 +46,11 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Night Activities</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "Night").count %> ideas</p>
+      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "night").count %> ideas</p>
     </div>
     <div class="col-xs-10 container">
       <div class="row">
-        <% @project.activities.where(category: "Night").each do |activity| %>
+        <% @project.activities.where(category: "night").each do |activity| %>
           <div class="col-xs-3">
             <div class="button_secondary" id="night-activity"><i class="fas fa-moon"></i> <%= activity.name %></div>
           </div>

@@ -1,5 +1,10 @@
 // /* Main navbar */
-
+#harry_logo {
+  a {
+  display: flex;
+  align-items: center;
+  }
+}
 
 .navbar-harry {
   height: 70px;
@@ -11,24 +16,58 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 
 #navbar-links {
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
   justify-content: space-between;
+  width: 300px;
+  align-items: center;
   a {
-    text-decoration: none;
     color: white;
-    font-size: 17px;
-    font-weight: lighter;
-    padding: 30px;
+    opacity: 0.8;
+    font-size: 16px;
+    margin: 0px;
+    padding: 20px 0px;
+    &:hover {
+      border-bottom: 4px solid white;
+      opacity: 1;
+    }
   }
 }
 
+.dropdown:hover .dropdown-menu {
+display: block;
+}
 
-#navbar-links a:hover {
-    font-weight: bolder;
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  margin-top: 19px;
+  left: -50px;
+  width: 130px;
+  color: $violet;
+  padding: 15px;
+  padding-top: 20px;
+  text-align: center;
+  opacity: 0.95;
+  border-radius: 3px;
+  z-index: 2000;
+  p {
+    color: $violet;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid $violet;
+    margin: 0;
+  }
 }
 
 // .navbar-wagon {

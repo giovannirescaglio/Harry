@@ -3,17 +3,29 @@
   <div id="harry_logo">
     <%= link_to root_path do %>
       <%= image_tag("logo_white.png") %>
+      <h1>Harry</h1>
     <% end %>
-    <h1>Harry</h1>
   </div>
   <div id="navbar-links">
-    <%= link_to "+ Create a new project", new_project_path %>
-    <%= link_to " Sign up", new_user_registration_path %>
+    <%= link_to "Start your project", new_project_path %>
+    <% if user_signed_in? %>
+      <div class="dropdown">
+        <%= link_to "My Teams", root_path, data: {toggle:"dropdown"}, class:"dropdown-toggle" %>
+        <div class="dropdown-menu">
+          <% current_user.guests.each do |guest| %>
+            <%= link_to step1_project_path(guest.project) do %>
+              <p><i class="fas fa-users"></i> <%= guest.project.name %></p>
+            <% end %>
+          <% end  %>
+        </div>
+      </div>
+    <% end %>
     <% if !user_signed_in? %>
+    <%= link_to " Sign up", new_user_registration_path %>
     <%= link_to "Login", new_user_session_path %>
     <% end %>
     <% if user_signed_in? %>
-    <%= link_to " Logout", destroy_user_session_path, method: :delete %>
+    <%= link_to " Logout", destroy_user_session_path, method: :delete, id:"logout" %>
     <% end %>
   </div>
 </div>

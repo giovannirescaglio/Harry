@@ -5749,6 +5749,10 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
 
+vegas@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/vegas/-/vegas-2.4.0.tgz#9d768b56e1cf952198d24eab135469bd29f227a7"
+
 vendors@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.2.tgz#7fcb5eef9f5623b156bcea89ec37d63676f21801"

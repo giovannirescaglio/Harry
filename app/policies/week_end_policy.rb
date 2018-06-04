@@ -4,4 +4,8 @@ class WeekEndPolicy < ApplicationPolicy
       scope
     end
   end
+
+  def upvote?
+    true
+  end
 end

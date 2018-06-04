@@ -98,7 +98,8 @@ class ProjectsController < ApplicationController
 
   def votes
     authorize @project
-    @activities = @project.activities
+    @day_activities = @project.activities.where(category:"day")
+    @night_activities = @project.activities.where(category:"night")
     @destinations = @project.destinations
   end
 

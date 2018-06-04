@@ -1,6 +1,11 @@
-<div class="banner">
-      <h1>Create your bachelor party easy-peasy.</h1>
-      <%= link_to "Try it now", new_project_path, class: "button_primary" %>
+<%= stylesheet_pack_tag 'banner' %>
+
+<div class="banner"
+     data-images="<%= ['slider1.jpg', 'slider2.jpg', 'slider3.jpg', 'slider4.jpg', 'slider5.jpg'].map{ |img| { src: image_path(img) }}.to_json %>">
+     <div class="banner-filter">
+        <h1>Create your bachelor party easy-peasy.</h1>
+        <%= link_to "Try it now", new_project_path, class: "button_primary" %>
+      </div>
 </div>
 
 <div id="home-description">
@@ -31,7 +36,7 @@
 
 <div class="separator big" id="cta">
   <div class="call-to-action">
-    <h4>Invite your crew, Generate ideas, Enjoy your trip.</h4>
+    <h4 class="">Invite your crew, Generate ideas, Enjoy your trip.</h4>
     <%= link_to "Get started", new_project_path, class: "button_secondary" %>
   </div>
   <div class="home-img-intermediate-size">
@@ -84,4 +89,4 @@
   </div>
 </div>
 
-
+<%= javascript_pack_tag 'banner' %>

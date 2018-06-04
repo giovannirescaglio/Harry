@@ -99,6 +99,7 @@ class ProjectsController < ApplicationController
   def votes
     authorize @project
     @activities = @project.activities
+    @destinations = @project.destinations
   end
 
   private

@@ -9,4 +9,9 @@ class WeekendsController < ApplicationController
 
     redirect_to preferences_guest_path(@guest)
   end
+
+
+
+  end
 end
+

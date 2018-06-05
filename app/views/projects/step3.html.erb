@@ -13,7 +13,7 @@
     </div>
     <div class="results-budget-date">
       <h4><%= @average_budget%>€ /person <i class="fas fa-hand-holding-usd"></i></h4>
-      <h4><%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %>(<%=@guest_number%>/<%= @weekend_votes.count %> available) <i class="far fa-calendar-alt"></i></h4>
+      <h4><%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %>(<%=@weekend_votes%>/<%= @guests.count %> available) <i class="far fa-calendar-alt"></i></h4>
     </div>
 </div>
 

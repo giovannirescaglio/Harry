@@ -1,16 +1,43 @@
+<div id="title-votes">
+  <h2>Click on the ideas you like to show your preferences</h2>
+</div>
+
 <div class="container" id="ideas-results">
-  <h2>Click on the ideas you like </h2>
   <div class="row" id="votes-rows">
-    <div class="col-xs-3">
-      <h4> Day Activities </h4>
+    <div class="col-xs-2">
+      <h4>Destinations</h4>
+      <div id="ideas-count">&ensp;<i class="fas fa-arrow-right"></i> <%= @destinations.count %> ideas</div>
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-10">
+      <div class="row">
+        <% @destinations.each do |destination| %>
+          <div class="col-xs-3">
+            <div class = "button_primary" id="destination">
+              <p><i class="fas fa-map-marker-alt"></i> <%= destination.name %>
+                <%= link_to like_destination_path(destination), method: :put, class: "button_primary badge-vote hvr-pop" do %>
+                  <i class="fas fa-thumbs-up"></i>
+                  <%= destination.get_upvotes.size %>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="votes-rows">
+    <div class="col-xs-2">
+      <h4>Day Activities</h4>
+      <div id="ideas-count">&ensp;<i class="fas fa-arrow-right"></i> <%= @day_activities.count %> ideas</div>
+    </div>
+    <div class="col-xs-10">
       <div class="row">
         <% @day_activities.each do |activity| %>
-          <div class="col-xs-4">
+          <div class="col-xs-3">
             <div class = "button_secondary" id="day-activity">
-              <p><%= activity.name %>
-                <%= link_to like_activity_path(activity), method: :put, class: "button_primary badge-vote" do %>
+              <p><i class="fas fa-sun"></i> <%= activity.name %>
+                <%= link_to like_activity_path(activity), method: :put, class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <%= activity.get_upvotes.size %>
                 <% end %>
@@ -24,16 +51,17 @@
 
 
    <div class="row" id="votes-rows">
-    <div class="col-xs-3">
-      <h4> Night Activities </h4>
+    <div class="col-xs-2">
+      <h4>Night Activities</h4>
+      <div id="ideas-count">&ensp;<i class="fas fa-arrow-right"></i> <%= @night_activities.count %> ideas</div>
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-10">
       <div class="row">
         <% @night_activities.each do |activity| %>
-          <div class="col-xs-4">
-            <div class = "button_secondary" id="day-activity">
-              <p><%= activity.name %>
-                <%= link_to like_activity_path(activity), method: :put, class: "button_primary badge-vote" do %>
+          <div class="col-xs-3">
+            <div class = "button_secondary" id="night-activity">
+              <p><i class="fas fa-moon"></i> <%= activity.name %>
+                <%= link_to like_activity_path(activity), method: :put, class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <%= activity.get_upvotes.size %>
                 <% end %>
@@ -44,31 +72,8 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="votes-rows">
-    <div class="col-xs-3">
-      <h4> Destinations </h4>
-    </div>
-    <div class="col-xs-9">
-      <div class="row">
-        <% @destinations.each do |destination| %>
-          <div class="col-xs-4">
-            <div class = "button_secondary" id="day-activity">
-              <p><%= destination.name %>
-                <%= link_to like_destination_path(destination), method: :put, class: "button_primary badge-vote" do %>
-                  <i class="fas fa-thumbs-up"></i>
-                  <%= destination.get_upvotes.size %>
-                <% end %>
-              </p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div id="ideas-done">
-    <%= link_to "done", results_project_path(@project), class: "button_primary" %>
+  <div id="ideas-done2">
+    <%= link_to "done", results_project_path(@project), class: "button_primary hvr-pop" %>
   </div>
 </div>
 

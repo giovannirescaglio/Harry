@@ -1,0 +1,84 @@
+#banner_results {
+  color: black;
+  background-color: #707070;
+  height: calc(100vh - 140px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  h1 {
+  width: 50%;
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+  }
+  a {
+    width: 250px;
+  }
+}
+
+#results_modal {
+  height: 90%;
+  width: 65%;
+  background-color: white;
+  opacity: 1;
+  margin: 20px;
+  padding: 20px 80px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
+    h1{
+      font-size:20px;
+      margin: auto;
+    }
+    h2{
+      margin: 8px;
+      font-size: 20px;
+    }
+    h3 {
+      margin: 10px;
+      font-size: 16px;
+    }
+    img {
+      width: 20%;
+    }
+#results_title{
+    margin: 5px;
+}
+
+}
+#results_logo {
+  margin: auto;
+  width: 45%;
+}
+
+#results_avatar{
+  margin: 10px;
+  img{
+    margin-left:-1%;
+    margin-right: -1%;
+    width:7%
+  }
+}
+
+#destination, #day-activity, #night-activity {
+  margin: 10px;
+  width: 240px;
+  font-size: 14px;
+}
+
+.day-activity_align {
+  display: flex;
+}
+
+.night-activity_align {
+  display: inline-flex;
+}
+
+.results-we-budget{
+
+  display: inline-flex;
+}

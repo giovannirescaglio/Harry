@@ -1,0 +1,48 @@
+<% a = ['avatar1.png', 'avatar2.png', 'avatar3.png', 'avatar4.png', 'avatar5.png'] %>
+
+
+<div id="banner_results">
+  <div id="results_modal">
+    <div id="results_title"><h1><%= @project.name %></h1></div>
+    <div id="results_avatar">
+      <% @guests.each do |guest| %>
+          <%= image_tag a.sample %>
+      <% end %>
+    </div>
+    <div id="results_logo"> <%= image_tag("logo_black.png") %> </div>
+    <h2> Well done crew !</h2>
+    <h3> Find your results below :</h3>
+    <div class="button_secondary" id="#destination">
+      <i class="fas fa-map-marker-alt"></i>
+      <%= @top_destination.name%>
+    </div>
+
+
+      <div class="day-activity_align">
+        <% @top_day_activities.each do |activity|%>
+          <div class="button_secondary" id="day-activity">
+            <%= activity.name %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="night-activity_align">
+        <% @top_night_activities.each do |activity|%>
+          <div class="button_secondary" id="night-activity">
+            <%= activity.name %>
+          </div>
+        <% end %>
+      </div>
+
+    <div class="results-we-budget">
+      <div id="weekend-option">
+        week-end
+      </div>
+      <div id="weekend-option">
+        <%= @average_budget%> /€pers
+      </div>
+    </div>
+  </div>
+</div>
+
+

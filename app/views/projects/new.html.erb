@@ -13,7 +13,7 @@
         <h3><i class="fas fa-users"></i> Invite all participants:</h3>
         <p>Please input the email adresses of all the participants you would like to invite to the party</p>
         <input type="text" name=email id="email-input" placeholder="ex: harry@gmail.com">
-        <p class="button_primary" id="add-email" href="#">add</p>
+        <p class="button_primary hvr-pop" id="add-email" href="#">add</p>
         <div id="hidden-emails"></div>
       </div>
       <div class="col-xs-12 col-md-4"></div>
@@ -48,6 +48,6 @@
   </div>
   <div class="separator" id="submit-div">
     <h3>Ready for take-off?</h3>
-    <%= f.submit 'submit' %>
+    <%= f.submit 'submit', class: "hvr-pop" %>
   </div>
 <% end %>

@@ -132,10 +132,12 @@ p {
 #submit-div {
   display: flex;
   flex-direction: column;
+  height: 190px;
   align-items: center;
   justify-content: center;
   h3 {
     color: white;
+    margin-top: 15px;
   }
   input {
     background: #515055;

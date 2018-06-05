@@ -11,6 +11,9 @@
   display: block;
   text-decoration: none;
   text-align: center;
+  &:hover {
+    background: $violet;
+  }
   &.visited {
     background: #515055;
     color:white;

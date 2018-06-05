@@ -5,6 +5,10 @@
      <div class="banner-filter">
         <h1>Create your <br>bachelor party <br>easy-peasy.</h1>
         <%= link_to "Try it now", new_project_path, class: "button_primary hvr-pop" %>
+        <div id="project-counter" class="button_secondary">
+          <h4>#<%= @projects.count %> teams are already using Harry</h4>
+          <%= image_tag("logo_white.png") %>
+        </div>
       </div>
 </div>
 

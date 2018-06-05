@@ -1,37 +1,28 @@
 #banner_results {
   color: black;
   background-color: #707070;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   padding: 10px;
-  h1 {
-  width: 50%;
-  font-size: 80px;
-  font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  margin-bottom: 40px;
-  }
-  a {
-    width: 250px;
-  }
 }
 
 #results_modal {
-  height: 90%;
+  height: 80%;
   width: 65%;
   background-color: white;
   opacity: 1;
   margin: 20px;
-  padding: 20px 80px;
+  padding: 40px 100px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
     h1{
-      font-size:20px;
+      font-size:36px;
       margin: auto;
     }
     h2{
@@ -40,16 +31,21 @@
     }
     h3 {
       margin: 10px;
+      margin-bottom: 30px;
       font-size: 16px;
     }
     img {
       width: 20%;
     }
+    a {
+      width: 250px;
+    }
+  }
+
 #results_title{
     margin: 5px;
 }
 
-}
 #results_logo {
   margin: auto;
   width: 45%;
@@ -64,10 +60,8 @@
   }
 }
 
-#destination, #day-activity, #night-activity {
+.final-destination {
   margin: 10px;
-  width: 240px;
-  font-size: 14px;
 }
 
 .day-activity_align {
@@ -79,6 +73,10 @@
 }
 
 .results-we-budget{
-
   display: inline-flex;
+}
+
+#weekend-option {
+  margin: 10px;
+  width: 190px;
 }

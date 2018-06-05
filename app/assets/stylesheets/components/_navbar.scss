@@ -51,22 +51,26 @@ display: block;
 .dropdown-menu {
   position: absolute;
   margin-top: 21px;
-  left: -50px;
+  left: -45px;
   width: 130px;
   color: $violet;
-  padding: 15px;
-  padding-top: 20px;
-  text-align: center;
+  padding: 15px 0px;
+  padding-top: 7px;
+  text-align: left;
   opacity: 0.95;
-  border-radius: 3px;
+  border-radius: 5px;
   z-index: 2000;
   p {
-    color: $violet;
+    color: #515055;
     font-size: 15px;
     font-weight: bold;
     padding: 10px;
-    border-bottom: 1px solid $violet;
+    border-bottom: 0px solid $violet;
     margin: 0;
+    &:hover {
+      background: #E5E3F5;
+      color: $violet;
+    }
   }
 }
 

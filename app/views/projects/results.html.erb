@@ -5,7 +5,11 @@
   <div id="results_modal">
     <div id="results_avatar">
       <% @guests.each do |guest| %>
+        <% if guest.user.picture.present? %>
+          <%= cl_image_tag guest.user.picture, class:"avatar" %>
+          <% else %>
           <%= image_tag a.sample %>
+        <% end %>
       <% end %>
     </div>
     <div id="results_title"><h1><%= @project.name %></h1></div>

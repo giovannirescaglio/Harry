@@ -13,7 +13,7 @@
     <%= image_tag 'budget_icon2.png' %>
     </div>
     <div class="results-date">
-      Jul, 06 to Jul, 08
+      <%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %>(<%=@guest_number%>/<%= @weekend_votes.count %> available)
     <%= image_tag 'calendar_icon2.png' %>
     </div>
    </div>

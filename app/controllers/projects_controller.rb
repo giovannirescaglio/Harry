@@ -12,6 +12,10 @@ class ProjectsController < ApplicationController
     @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
 
+    @top_weekend = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}.first
+    @weekend_votes = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}
+    @guest_number = @guests.count
+
     @number_of_moods = @project.moods.count
     @number_of_moods_scenery = @project.moods.where("city = TRUE OR wild = TRUE").count
 
@@ -94,6 +98,10 @@ class ProjectsController < ApplicationController
     @guests = @project.guests
     @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
+
+    @top_weekend = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}.first
+    @weekend_votes = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}
+    @guest_number = @guests.count
 
     @number_of_moods = @project.moods.count
     @number_of_moods_scenery = @project.moods.where("city = TRUE OR wild = TRUE").count

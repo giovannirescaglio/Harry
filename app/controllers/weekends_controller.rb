@@ -7,4 +7,9 @@ class WeekendsController < ApplicationController
     @weekend.upvote_by @guest
     redirect_to preferences_guest_path(@guest)
   end
+
+
+
+  end
 end
+

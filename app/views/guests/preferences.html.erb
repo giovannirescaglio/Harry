@@ -26,11 +26,9 @@
         <div class="row container" id="weekends-list">
           <div class="row">
             <% @week_ends.each do |week_end| %>
-            <div class="col-xs-6" id="weekend-option">
-              <%= week_end.start_date.strftime('%b, %d') %> to <%= week_end.end_date.strftime('%b, %d') %>
-              <%= link_to like_week_end_path(week_end), method: :put do %>
-                <i class="fas fa-thumbs-up"></i>
-                <%= week_end.get_upvotes.size %>
+            <div class="col-xs-6">
+              <%= link_to like_week_end_path(week_end), method: :put,class: "weekend-button #{"visited" unless week_end.get_upvotes.find_by(voter_id: current_user.id).nil?}"  do %>
+                <%= week_end.start_date.strftime('%b, %d') %> to <%= week_end.end_date.strftime('%b, %d') %>
               <% end %>
             </div>
           <% end %>
@@ -40,6 +38,6 @@
     </div>
   </div>
   <div id="ideas-done">
-    <%= link_to "done", step2_project_path(@project), class: "button_primary" %>
+    <%= link_to "done", step2_project_path(@project), class: "button_primary hvr-pop" %>
   </div>
 </div>

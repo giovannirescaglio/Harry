@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ActsAsVotable::Vote.destroy_all
 Destination.destroy_all
 Activity.destroy_all
 Mood.destroy_all
 Guest.destroy_all
 Project.destroy_all
 User.destroy_all
+
 
 # USER SEED
 Tony = User.create!(first_name: "Antoine", last_name: "Goffette", email:"tony@gmail.com", password: "123456")

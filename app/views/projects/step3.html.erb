@@ -1,36 +1,30 @@
 <% a = ['avatar1.png', 'avatar2.png', 'avatar3.png', 'avatar4.png', 'avatar5.png'] %>
 
 <div class="banner-step2">
-    <h1><%= @project.name.capitalize %></h1>
-   <div class="banner-wrapper">
     <div class="avatar-step2">
-      <% @guests.each do |guest| %>
-          <%= image_tag a.sample %>
-      <% end %>
+    <h1><%= @project.name.capitalize %></h1>
+        <% @guests.each do |guest| %>
+            <%= image_tag a.sample %>
+        <% end %>
     </div>
-    <div class="results-budget">
-      <%= @average_budget%>/€pers
-    <%= image_tag 'budget_icon2.png' %>
+    <div class="results-budget-date">
+      <h4><%= @average_budget%>€ /person <i class="fas fa-hand-holding-usd"></i></h4>
+      <h4><%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %>(<%=@guest_number%>/<%= @weekend_votes.count %> available) <i class="far fa-calendar-alt"></i></h4>
     </div>
-    <div class="results-date">
-      <%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %>(<%=@guest_number%>/<%= @weekend_votes.count %> available)
-    <%= image_tag 'calendar_icon2.png' %>
-    </div>
-   </div>
 </div>
 
 
 <div class="step2-description">
-  <div class="step2-text">
-  <h2>Step 3.</h2>
+  <div class="step1-text">
+  <h1>Step 3.</h2>
   <h3>Vote for the best ideas</h3>
-  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+  <p id="p-step2">Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
   </p>
-  <p>Estimated time to complete: 3 minutes</p>
+  <h4>Estimated time to complete: 3 minutes</p>
 
 </div>
   <div class="step2-moods">
-    <h3>Moods results:</h3>
+    <h4>Moods results:</h4>
       <div class="step2-moods-wrapper">
         <div class="step2-images">
           <%if @moods_city >= @moods_wild %>
@@ -38,7 +32,7 @@
             <%else %>
             <%= image_tag 'wild5.jpg' %>
           <% end %>
-          <div class="percentage"> <%= number_to_percentage(@moods_scenery_percentage, precision: 0) %> <%= @moods_scenery%> </div>
+          <div class="button_secondary percentage"> <%= number_to_percentage(@moods_scenery_percentage, precision: 0) %> <%= @moods_scenery%> </div>
         </div>
         <div class="step2-images">
             <%if @moods_fancy >= @moods_trashy %>
@@ -46,7 +40,7 @@
               <%else %>
               <%= image_tag 'springbreak.jpg' %>
             <% end %>
-            <div class="percentage"> <%= number_to_percentage(@moods_lifestyle_percentage, precision: 0) %> <%= @moods_lifestyle%> </div>
+            <div class="button_secondary percentage"> <%= number_to_percentage(@moods_lifestyle_percentage, precision: 0) %> <%= @moods_lifestyle%> </div>
         </div>
         <div class="step2-images">
             <%if @moods_clubbing >= @moods_chilling %>
@@ -54,11 +48,12 @@
               <%else %>
               <%= image_tag 'chillparty.jpg' %>
             <% end %>
-            <div class="percentage"> <%= number_to_percentage(@moods_party_percentage, precision: 0) %> <%= @moods_party%> </div>
+            <div class="button_secondary percentage"> <%= number_to_percentage(@moods_party_percentage, precision: 0) %> <%= @moods_party%> </div>
         </div>
       </div>
   </div>
+<div id="ideas-done">
+  <%= link_to 'Start', votes_project_path(@project), class: "button_primary hvr-pop" %>
 </div>
-<div class="button_primary btn-step2">
-  <%= link_to 'Start', votes_project_path(@project) %>
 </div>
+

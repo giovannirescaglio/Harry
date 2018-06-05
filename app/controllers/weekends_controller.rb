@@ -3,8 +3,15 @@ class WeekendsController < ApplicationController
     @weekend = WeekEnd.find(params[:id])
     @project = @weekend.project
     authorize @weekend
+
     @guest = current_user.guests.find_by(project_id: @project)
-    @weekend.upvote_by @guest
+    @weekend.upvote_by current_user
+
     redirect_to preferences_guest_path(@guest)
   end
+
+
+
+  end
 end
+

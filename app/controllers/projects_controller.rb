@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:step1, :step2, :ideas, :step3, :votes ]
+  before_action :set_project, only: [:step1, :step2, :ideas, :step3, :votes, :results ]
 
   def step1
     @guests = @project.guests
@@ -12,6 +12,10 @@ class ProjectsController < ApplicationController
     @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
 
+    @top_weekend = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}.first
+    @weekend_votes = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}
+    @guest_number = @guests.count
+
     @number_of_moods = @project.moods.count
     @number_of_moods_scenery = @project.moods.where("city = TRUE OR wild = TRUE").count
 
@@ -19,7 +23,6 @@ class ProjectsController < ApplicationController
     @moods_wild = (@project.moods.where(wild: true).count*100) / (@number_of_moods_scenery)
     @moods_scenery = @moods_city >= @moods_wild ? "city" : "wild"
     @moods_scenery_percentage = @moods_city >= @moods_wild ? @moods_city : @moods_wild
-
 
     @number_of_moods_lifestyle = @project.moods.where("fancy = TRUE OR trashy = TRUE").count
 
@@ -96,6 +99,10 @@ class ProjectsController < ApplicationController
     @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
 
+    @top_weekend = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}.first
+    @weekend_votes = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}
+    @guest_number = @guests.count
+
     @number_of_moods = @project.moods.count
     @number_of_moods_scenery = @project.moods.where("city = TRUE OR wild = TRUE").count
 
@@ -125,6 +132,16 @@ class ProjectsController < ApplicationController
     @day_activities = @project.activities.where(category:"day")
     @night_activities = @project.activities.where(category:"night")
     @destinations = @project.destinations
+  end
+
+  def results
+    @guests = @project.guests
+    authorize @project
+    @top_day_activities = @project.activities.where(category: "day").sort_by{|activity| -activity.get_upvotes.size}.take(3)
+    @top_night_activities = @project.activities.where(category: "night").sort_by{|activity| -activity.get_upvotes.size}.take(2)
+    @top_destination = @project.destinations.sort_by{|destination| -destination.get_upvotes.size}.first
+    @budgets = @guests.map{ |g| g.budget.to_i}
+    @average_budget = @budgets.sum/(@budgets.count)
   end
 
   private

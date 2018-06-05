@@ -1,11 +1,15 @@
 .mood-page {
   height: calc(100vh - 70px);
+  h3 {
+    margin-top: 10px;
+  }
 }
 
 .question-title {
   padding: 20px 50px;
   h1 {
     color: $violet;
+    margin-bottom: 10px;
   }
 }
 
@@ -110,6 +114,7 @@
   }
   p {
     width: 40%;
+    margin-bottom: 30px;
   }
   h4 {
     font-size: 20px;

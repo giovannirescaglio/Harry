@@ -2,7 +2,7 @@
 
 <div class="banner-step2">
     <div class="avatar-step2">
-    <h1><%= @project.name.capitalize %></h1>
+    <h1><%= @project.name %></h1>
       <% @guests.each do |guest| %>
         <% if guest.user.picture.present? %>
           <%= cl_image_tag guest.user.picture, class:"avatar" %>
@@ -15,10 +15,10 @@
 <div class="step1-text" data-aos="fade-right" data-aos-duration="1000">
   <h1>Step 1</h1>
   <h3>Setting the mood</h3>
-  <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+  <p>Before anything else we need to ask you a few questions to stage your week-end. You should always keep in mind matching the groom or bride's tastes to create a truly amazing party that will be remembered!
   </p>
   <h4>4 questions</h4>
-  <h4>Estimated time to complete: 3 minutes</h4>
+  <h4><i class="fas fa-stopwatch"></i> Estimated time to complete: 3 minutes</h4>
 </div>
 <div id="ideas-done">
     <%= link_to 'Start', scenery_project_moods_path(@project), class: "button_primary hvr-pop" %>

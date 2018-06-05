@@ -8,5 +8,16 @@ if (add_btn) {
     emails_list.insertAdjacentHTML("beforeend", `<li>${new_email.value}</li>`);
     emails_hidden.insertAdjacentHTML("beforeend", `<input type="text" name=emails[] value=${new_email.value} class="hidden">`);
     new_email.value = "";
+    event.preventDefault();
   });
 }
+
+
+const preventFormSubmit = (event) => {
+  if (event.which == 13 || event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+  }
+};
+
+document.getElementById("new_project").addEventListener("keypress", preventFormSubmit)

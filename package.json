@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "aos": "^2.3.0",
     "bootstrap": "3",
     "flatpickr": "^4.5.0",
     "hover.css": "^2.3.1",

@@ -75,7 +75,7 @@ class ProjectsController < ApplicationController
       params[:emails].each do |email|
         @newuser = User.create(email: email, password: ENV["DEFAULT_PASSWORD"])
         @newguest = Guest.create(user: @newuser, project: @project, role:"participant")
-        UserMailer.welcome(@newuser).deliver_now
+        UserMailer.welcome(@newuser, @project).deliver_now
       end
       find_weekends(@project.start_date, @project.end_date).each do |weekend|
         @weekend = WeekEnd.new(weekend)

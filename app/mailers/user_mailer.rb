@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
-  def welcome(user)
+  def welcome(user, project)
     @user = user
-    @project = @user.projects.last
+    @project = project
     @admin = @project.user
     mail(to: @user.email, subject: "You're invited to join a project on Harry")
   end

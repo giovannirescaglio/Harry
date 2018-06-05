@@ -2,7 +2,7 @@
 
 <div class="banner-step2">
     <div class="avatar-step2">
-    <h1><%= @project.name.capitalize %></h1>
+    <h1><%= @project.name %></h1>
         <% @guests.each do |guest| %>
         <% if guest.user.picture.present? %>
           <%= cl_image_tag guest.user.picture, class:"avatar" %>
@@ -22,13 +22,13 @@
   <div class="step1-text" data-aos="fade-right" data-aos-duration="1000">
   <h1>Step 3.</h2>
   <h3>Vote for the best ideas</h3>
-  <p id="p-step2">Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+  <p id="p-step2">This is already the end, only one step to go. Now that every member of your team has made some suggestions you can give your opinion and vote for the best ideas.
   </p>
-  <h4>Estimated time to complete: 3 minutes</p>
+  <h4><i class="fas fa-stopwatch"></i> Estimated time to complete: 3 minutes</p>
 
 </div>
   <div class="step2-moods">
-    <h4>Moods results:</h4>
+    <h4>Mood results:</h4>
       <div class="step2-moods-wrapper">
         <div class="step2-images">
           <%if @moods_city >= @moods_wild %>

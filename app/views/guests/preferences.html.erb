@@ -1,14 +1,14 @@
 <div class="mood-page">
   <div class="question-title">
     <h1>Question 4</h1>
-    <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+    <p><i class="far fa-hand-point-right"></i> This is all about you now! We need some basic information before we move on to the fun part.
     </p>
   </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-6" id="budget-input">
         <h3><i class="fas fa-hand-holding-usd"></i></i> Define your budget</h3>
-        <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+        <p>How much are you willing to spend for this week-end? Please provide your best estimate. We will compute your input together with the answers of your team and let you know the final average budget per person later.
         </p>
         <p class="violet-p"><%= @admin %> has set the maximum budget/person to: <%= @project.max_budget %>€</p>
         <%= simple_form_for @guest do |f| %>
@@ -19,7 +19,7 @@
       <div class="col-xs-6 container" id="weekend-choices">
         <div class="row">
           <h3><i class="far fa-calendar-alt"></i> Confirm your schedule</h3>
-          <p>Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?
+          <p><%= @admin %> has already defined the period when the week-end should take place but we still need to know which ones work for you! Once we know this we will let you know which week-end maximizes attendance in your team.
           </p>
           <p class="violet-p">Please click on the week-ends when you plan to be available:</p>
         </div>

@@ -5,7 +5,7 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new({
       first_name: 'Happy',
       last_name: 'The Team',
-      email: 'hi@harry.team',
+      email: 'contact@harry.team',
       password: 'harry2018',
     })
   end

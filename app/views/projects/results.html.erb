@@ -36,7 +36,7 @@
 
     <div class="results-we-budget">
       <div id="weekend-option">
-        week-end
+        <%= @top_weekend.start_date.strftime('%b, %d')%> to <%= @top_weekend.end_date.strftime('%b, %d')%>
       </div>
       <div id="weekend-option">
         <%= @average_budget%> /€pers

@@ -142,6 +142,7 @@ class ProjectsController < ApplicationController
     @top_destination = @project.destinations.sort_by{|destination| -destination.get_upvotes.size}.first
     @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
+    @top_weekend = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}.first
   end
 
   private

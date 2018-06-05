@@ -5,6 +5,11 @@
     font-size: 14px;
     color: white;
     position:relative;
+    margin: 0;
+  }
+  h4 {
+    margin: 5px;
+    border-bottom: 5px solid $violet;
   }
 }
 
@@ -23,4 +28,23 @@ a {
   position: absolute;
   top: -16px;
   right: -61px;
+}
+
+#ideas-results {
+  position: relative;
+}
+
+#title-votes {
+  height: 50px;
+  h2 {
+    color: $violet;
+    padding: 20px 50px;
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+#ideas-count {
+  color: gray;
+  font-size: 14px;
 }

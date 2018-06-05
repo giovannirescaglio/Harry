@@ -1,6 +1,8 @@
 .signupcontainer {
   background-color: #EDEBEB;
+  position: relative;
   width: 500px;
+  height: 90%;
   opacity: 1;
   margin: auto;
   padding: 40px 80px;
@@ -8,8 +10,11 @@
   border-radius: 5px;
   box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
   .form-inputs{
-    margin-top:40px;
+    margin-top:20px;
     margin-bottom: 40px;
+  }
+  h2 {
+    margin: 10px;
   }
 }
 
@@ -26,28 +31,25 @@ margin-bottom: 5px;
   color:black;
 }
 
-
-body h2 {
-  color: black;
-}
-
 #logo {
   img {
-    height: 100px;
+    height: 70px;
   }
 }
 
 .logincontainer {
   background-color: #EDEBEB;
+  position: relative;
   width: 500px;
+  height: 90%;
   opacity: 1;
   margin: auto;
-  padding: 80px 40px 80px 40px;
+  padding: 40px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
   .form-inputs{
-    margin-top:70px;
+    margin-top:40px;
     margin-bottom: 40px;
   }
   .form-actions{
@@ -94,15 +96,36 @@ background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url
 }
 
 #close_btn_signup {
-  position: relative;
-  left: 210px;
-  bottom: 200px;
+  position: absolute;
+  right: -90px;
+  top: 15px;
   color:black;
+  opacity: 0.7;
 }
 
 #close_btn_login {
-  position: relative;
-  left: 210px;
-  bottom: 240px;
+  position: absolute;
+  right: -115px;
+  top: -20px;
   color:black;
+  opacity: 0.7;
 }
+
+#user_first_name, #user_email, #user_password, #user_password_confirmation {
+  border: 1px solid $violet;
+  border-radius: 3px;
+  font-family: Questrial;
+  font-size: 15px;
+  background: white;
+}
+
+.text-muted {
+  font-size: 15px;
+  font-family: Questrial;
+}
+
+.form-actions {
+  margin-top: 0px;
+  font-size: 15px;
+}
+

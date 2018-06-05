@@ -3,7 +3,7 @@
 <div class="banner"
      data-images="<%= ['slider1.jpg', 'slider2.jpg', 'slider3.jpg', 'slider4.jpg', 'slider5.jpg'].map{ |img| { src: image_path(img) }}.to_json %>">
      <div class="banner-filter">
-        <h1>Create your <br>bachelor party <br>easy-peasy.</h1>
+        <h1 data-aos="fade-right" data-aos-duration="2000">Create your <br>bachelor party <br>easy-peasy.</h1>
         <%= link_to "Try it now", new_project_path, class: "button_primary hvr-pop" %>
         <div id="project-counter" class="button_secondary">
           <h4>#<%= @projects.count %> teams are already using Harry</h4>
@@ -13,7 +13,7 @@
 </div>
 
 <div id="home-description">
-  <div id="home-spec">
+  <div id="home-spec" id="home-description" data-aos="fade-up" data-aos-easing="linear"data-aos-duration="700">
     <div id="home-calculate">
       <div class="home-icon"><%= image_tag "budget_icon.png"%></div>
       <p>Calculate your week-end budget to fit every pockets.</p>
@@ -31,7 +31,7 @@
       <p>Evaluate your options and build your program.</p>
     </div>
   </div>
-  <div id="home-illustration">
+  <div id="home-illustration" id="home-description" data-aos="fade-down" data-aos-easing="linear"data-aos-duration="700">
     <h2> No more tears, no more fights, let harry do the work.</h2>
     <div class="home-icon"><%= image_tag "illustration_home.png"%></div>
 
@@ -51,7 +51,7 @@
 <div id="reviews-block">
     <h2 style="text-align: center;">Harry makes you happy</h2>
   <div class="home-review">
-    <div class="card">
+    <div class="card" id="card1" data-aos="fade-right" data-aos-duration="1000">
       <div class="card-stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -64,7 +64,7 @@
       </div>
        <div class="card-user"><%= image_tag("avatar1.png")%></div>
     </div>
-    <div class="card">
+    <div class="card" id="card2" data-aos="fade-down" data-aos-duration="600">
       <div class="card-stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
@@ -73,11 +73,11 @@
       </div>
       <div class="card-description">
         <h3>Fun & Fast</h3>
-        <p>Before Harry, my friends and I spent so much time trying to find a common slot to plan the groom's party. It never worked out and was super frustrating! We always argued but thanks to Harry we managed to plan the perfect party in just 3 days! </p>
+        <p>Before Harry, my friends and I spent so much time trying to find a common slot. It never worked out and was super frustrating! Thanks to Harry we planned the perfect party in just 3 days! </p>
       </div>
       <div class="card-user"><%= image_tag("avatar2.png")%></div>
     </div>
-    <div class="card">
+    <div class="card" id="card3" data-aos="fade-left" data-aos-duration="600">
       <div class="card-stars">
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>

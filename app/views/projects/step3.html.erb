@@ -13,13 +13,13 @@
     </div>
     <div class="results-budget-date">
       <h4><%= @average_budget%>€ /person <i class="fas fa-hand-holding-usd"></i></h4>
-      <h4><%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %>(<%=@weekend_votes%>/<%= @guests.count %> available) <i class="far fa-calendar-alt"></i></h4>
+      <h4><%= @top_weekend.start_date.strftime('%b, %d') %> to <%= @top_weekend.end_date.strftime('%b, %d') %> (<%=@weekend_votes%>/<%= @guests.count %> available) <i class="far fa-calendar-alt"></i></h4>
     </div>
 </div>
 
 
 <div class="step2-description">
-  <div class="step1-text">
+  <div class="step1-text" data-aos="fade-right" data-aos-duration="1000">
   <h1>Step 3.</h2>
   <h3>Vote for the best ideas</h3>
   <p id="p-step2">Sed si ille hac tam eximia fortuna propter utilitatem rei publicae frui non properat, ut omnia illa conficiat, quid ego, senator, facere debeo, quem, etiamsi ille aliud vellet, rei publicae consulere oporteret?

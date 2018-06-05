@@ -105,7 +105,7 @@ margin-bottom: 40px;
 .home-img-intermediate-size {
 flex: 0 0 10%;
 img{
-width: 85%
+width: 105%
 }
 }
 
@@ -113,7 +113,7 @@ width: 85%
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 100px;
+  padding: 0px 200px;
 }
 
 .call-to-action{
@@ -128,19 +128,30 @@ width: 85%
 .card {
   height: 200px;
   width: 340px;
-  padding: 10px;
+  padding: 15px;
   color: white;
   position: relative;
-  background-color: #C4C4C4;
   border-radius: 5px;
   box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
+}
+
+#card1 {
+  background-image: linear-gradient(rgba(18,18,18, 0.74), rgba(18,18,18, 0.30)), image-url("review3.jpg");
+}
+
+#card2 {
+  background-image: linear-gradient(rgba(18,18,18, 0.74), rgba(18,18,18, 0.30)), image-url("review2.jpg");
+}
+
+#card3 {
+  background-image: linear-gradient(rgba(18,18,18, 0.74), rgba(18,18,18, 0.30)), image-url("review5.jpg");
 }
 
 .card-stars {
   color: #FECA44;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -153,13 +164,13 @@ width: 85%
 }
 .card-description p {
   font-size: 14px;
-  color: black;
+  color: white;
 }
 
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 15px;
+  top: 15px;
   width: 40px;
   border-radius: 50%;
   img{

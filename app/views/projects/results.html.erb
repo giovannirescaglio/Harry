@@ -2,7 +2,7 @@
 
 
 <div id="banner_results">
-  <div id="results_modal" data-aos="fade-up" data-aos-duration="700">
+  <div id="results_modal" data-aos="fade-up" data-aos-duration="800">
     <div id="results_avatar">
       <% @guests.each do |guest| %>
         <% if guest.user.picture.present? %>
@@ -46,7 +46,7 @@
     <div id="airbnb-link" class="hvr-grow">
       <a href='https://www.airbnb.fr/s/<%= @top_destination.name %>/homes?refinement_paths%5B%5D=%2Fhomes&allow_override%5B%5D=&checkin=<%= @top_weekend.start_date %>&checkout=<%= @top_weekend.end_date %>&adults=<%= @guests.count %>' target="_blank">
       <%= image_tag "airbnblogo_red.png" %>
-      <h4>Book now in <%= @top_destination.name %> from  <%= @top_weekend.start_date.strftime('%b, %d')%> to <%= @top_weekend.end_date.strftime('%b, %d')%></h4></a>
+      <h4>Book in <%= @top_destination.name %> from  <%= @top_weekend.start_date.strftime('%b, %d')%> to <%= @top_weekend.end_date.strftime('%b, %d')%></h4></a>
     </div>
   </div>
 </div>

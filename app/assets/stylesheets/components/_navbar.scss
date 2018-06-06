@@ -41,8 +41,13 @@
   }
 }
 
+.dropdown:hover {
+  padding-top: 19px;
+  padding-bottom: 21px;
+}
+
 .dropdown:hover .dropdown-menu {
-display: block;
+  display: block;
 }
 
 .dropdown {
@@ -51,7 +56,7 @@ display: block;
 
 .dropdown-menu {
   position: absolute;
-  margin-top: 21px;
+  margin-top: 0px;
   left: -45px;
   width: 130px;
   color: $violet;
@@ -74,6 +79,7 @@ display: block;
     }
   }
 }
+
 
 // .navbar-wagon {
 //   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);

@@ -1,0 +1,6 @@
+function updateDestinationVotes() {
+  let destinationVotes = document.querySelector("[data-destination-id='<%= @destination.id %>']")
+  destinationVotes.innerHTML = '<%= @destination.get_upvotes.size %>';
+}
+
+updateDestinationVotes();

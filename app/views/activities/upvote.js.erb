@@ -1,0 +1,17 @@
+function updateDayActivityVotes() {
+  let dayActivityVotes = document.querySelector("[data-day-activity-id='<%= @activity.id %>']")
+  dayActivityVotes.innerHTML = '<%= @activity.get_upvotes.size %>';
+}
+
+function updateNightActivityVotes() {
+  let nightActivityVotes = document.querySelector("[data-night-activity-id='<%= @activity.id %>']")
+  nightActivityVotes.innerHTML = '<%= @activity.get_upvotes.size %>';
+}
+
+<% if @activity.category == 'day' %>
+  updateDayActivityVotes();
+<% end %>
+
+<% if @activity.category == 'night' %>
+  updateNightActivityVotes();
+<% end %>

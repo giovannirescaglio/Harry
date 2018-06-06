@@ -30,7 +30,10 @@ class ActivitiesController < ApplicationController
     @project = @activity.project
     authorize @activity
     @activity.upvote_by current_user
-    redirect_to votes_project_path(@project)
+    respond_to do |format|
+      format.html { redirect_to votes_project_path(@project)}
+      format.js
+    end
   end
 
 private

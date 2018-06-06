@@ -14,8 +14,7 @@
     </div>
     <div id="results_title"><h1><%= @project.name %></h1></div>
     <div id="results_logo"> <%= image_tag("logo_black.png") %> </div>
-    <h2> Well done crew !</h2>
-    <h3> Find your results below :</h3>
+    <h2> Well done crew ! Find your results below:</h2>
     <div class="button_primary final-destination" id="#destination">
       <i class="fas fa-map-marker-alt"></i>
       <%= @top_destination.name%>
@@ -40,13 +39,14 @@
 
     <div class="results-we-budget">
       <div id="weekend-option">
-        <i class="far fa-calendar-alt"></i>&ensp;
-        <%= @top_weekend.start_date.strftime('%b, %d')%> to <%= @top_weekend.end_date.strftime('%b, %d')%>
+        <i class="fas fa-hand-holding-usd"></i>
+        <%= @average_budget%> € /person
       </div>
-      <div id="weekend-option">
-        <i class="fas fa-hand-holding-usd"></i>&ensp;
-        <%= @average_budget%> €/person
-      </div>
+    </div><br>
+    <div id="airbnb-link" class="hvr-grow">
+      <a href='https://www.airbnb.fr/s/<%= @top_destination.name %>/homes?refinement_paths%5B%5D=%2Fhomes&allow_override%5B%5D=&checkin=<%= @top_weekend.start_date %>&checkout=<%= @top_weekend.end_date %>&adults=<%= @guests.count %>' target="_blank">
+      <%= image_tag "airbnblogo_red.png" %>
+      <h4>Book now in <%= @top_destination.name %> from  <%= @top_weekend.start_date.strftime('%b, %d')%> to <%= @top_weekend.end_date.strftime('%b, %d')%></h4></a>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
         <div class="mood-card" id="mood-club">
           <%= simple_form_for [@project, @mood] do |f| %>
             <%= f.hidden_field :clubbing, value: true %>
-            <%= f.submit 'Clubbing?', class: "button_secondary" %>
+            <%= f.submit 'Clubbing?', class: "button_secondary hvr-pop" %>
           <% end %>
         </div>
       </div>
@@ -18,7 +18,7 @@
         <div class="mood-card" id="mood-chill">
           <%= simple_form_for [@project, @mood] do |f| %>
             <%= f.hidden_field :chilling, value: true %>
-            <%= f.submit "Chilling?", class: "button_secondary" %>
+            <%= f.submit "Chilling?", class: "button_secondary hvr-pop" %>
           <% end %>
         </div>
       </div>

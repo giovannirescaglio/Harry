@@ -33,7 +33,7 @@ margin-bottom: 5px;
 
 #logo {
   img {
-    height: 70px;
+    height: 60px;
   }
 }
 
@@ -58,7 +58,7 @@ margin-bottom: 5px;
 }
 
 .formbanner {
-  background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url("friends6bisbis.jpg") ;
+  background-image: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), image-url("friends6bisbis.jpg") ;
   color: black;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -77,7 +77,7 @@ margin-bottom: 5px;
 }
 
 .loginbanner {
-background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url("friends6bisbis.jpg") ;
+background-image: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), image-url("friends6bisbis.jpg") ;
   color: black;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -130,6 +130,20 @@ background-image: linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)), image-url
 }
 
 #upload-info {
-  color:#7269CC;
+  color:gray;
+  font-family: Questrial;
+  font-size:14px;
+  margin: 0;
+  padding: 0;
+}
+
+.user_picture {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.link {
+  font-size: 15px;
+  color: gray;
 }
 

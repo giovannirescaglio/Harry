@@ -5,7 +5,7 @@
     <h1><%= @project.name %></h1>
         <% @guests.each do |guest| %>
         <% if guest.user.picture.present? %>
-          <%= cl_image_tag guest.user.picture, class:"avatar" %>
+          <%= cl_image_tag guest.user.picture, :aspect_ratio=>"1:1", :background=>"#262c35", :gravity=>"auto", :radius=>"max", :crop=>"fill" , class:"avatar" %>
           <% else %>
           <%= image_tag a.sample %>
         <% end %>

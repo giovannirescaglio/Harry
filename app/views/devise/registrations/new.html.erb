@@ -15,7 +15,8 @@
           <%= f.input :email, required: true, autofocus: true , label:false, placeholder:"Email" %>
           <%= f.input :password, required: true,  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label:false, placeholder:"Password"  %>
           <%= f.input :password_confirmation, required: true, label:false, placeholder:"Confirm your password"  %>
-          <%= f.input :picture , label_html: { class: 'button_secondary' }, input_html: { class: 'hidden upload-avatar'}, label:"Upload picture"  %>
+          <%= f.input :picture , label_html: { class: 'button_secondary' }, input_html: { class: 'hidden upload-avatar', onchange: "displayAttachmentName()"}, label:"Upload picture"  %>
+          <div id='upload-info'></div>
           <%= f.input :picture_cache, as: :hidden %>
         </div>
 
@@ -29,6 +30,12 @@
    </div>
 
 </div>
+
+<script>
+  function displayAttachmentName() {
+    document.getElementById('upload-info').innerHTML = event.currentTarget.value.split(/(\\|\/)/g).pop() + ' attached'
+  }
+</script>
 
 
 

@@ -54,7 +54,7 @@ Amsterdam = Destination.create!(name:"Amsterdam", project: Project.first)
 London = Destination.create!(name:"London", project: Project.first)
 Barcelona = Destination.create!(name:"Barcelona", project: Project.first)
 Madrid = Destination.create!(name:"Madrid", project: Project.first)
-Lisbon = Destination.create!(name:"Rome", project: Project.first)
+Lisbon = Destination.create!(name:"Lisbon", project: Project.first)
 puts "destination generated"
 
 

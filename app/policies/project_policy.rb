@@ -22,7 +22,9 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def step1?
-    true
+    user.guests.any? do |guest|
+      record.guests.include? guest
+    end
   end
 
   def scenery?
@@ -30,7 +32,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def step2?
-    true
+    step1?
   end
 
   def lifestyle?
@@ -38,7 +40,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def step3?
-    true
+    step2?
   end
 
   def party?
@@ -46,11 +48,11 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def votes?
-    true
+    step3?
   end
 
   def results?
-    true
+    votes?
   end
 
    def update?

@@ -6,7 +6,7 @@ class GuestPolicy < ApplicationPolicy
   end
 
   def preferences?
-    true
+    record.user == user
   end
 
   def update?

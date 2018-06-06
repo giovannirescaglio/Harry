@@ -1,12 +1,7 @@
 <div id="inputs-form">
   <h2>What do you have in mind?</h2>
   <div id="form-div">
-    <%= simple_form_for @activity do |f| %>
-        <%= f.input_field :name, :placeholder => "ex: Lisbon" %>
-        <input type="text" name="project" class="hidden" value= <%= @project.id %>>
-        <%= f.select :category, Category: ["Destination", "Day Activity", "Night Activity"] %>
-      <%= f.submit 'add', class: "button_secondary", id: "activity_submit" %>
-    <% end %>
+    <%= render 'projects/activity_form', project: @project, activity: @activity %>
   </div>
 
 </div>
@@ -16,14 +11,12 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Destinations</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.destinations.count %> ideas</p>
+        <p>&ensp;<i class="fas fa-arrow-right"></i> <span id='destinations-count'><%= @project.destinations.count %></span> ideas</p>
     </div>
     <div class="col-xs-10 container">
-      <div class="row">
+      <div class="row" id='destinations'>
         <% @project.destinations.each do |destination| %>
-          <div class="col-xs-3">
-            <div class="button_primary" id="destination"><i class="fas fa-map-marker-alt"></i> <%= destination.name %></div>
-          </div>
+          <%= render 'activities/destination', destination: destination %>
         <% end %>
       </div>
     </div>
@@ -31,14 +24,12 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Day Activities</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "day").count %> ideas</p>
+      <p>&ensp;<i class="fas fa-arrow-right"></i> <span id='day-activity-count'><%= @project.activities.where(category: "day").count %></span> ideas</p>
     </div>
     <div class="col-xs-10 container">
-      <div class="row">
+      <div class="row" id='day-activities'>
         <% @project.activities.where(category: "day").each do |activity| %>
-          <div class="col-xs-3">
-            <div class="button_secondary" id="day-activity"><i class="fas fa-sun"></i> <%= activity.name %></div>
-          </div>
+          <%= render 'activities/day_activity', activity: activity %>
         <% end %>
       </div>
     </div>
@@ -46,14 +37,12 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Night Activities</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "night").count %> ideas</p>
+      <p>&ensp;<i class="fas fa-arrow-right"></i> <span id='night-activity-count'><%= @project.activities.where(category: "night").count %></span> ideas</p>
     </div>
     <div class="col-xs-10 container">
-      <div class="row">
+      <div class="row" id='night-activities'>
         <% @project.activities.where(category: "night").each do |activity| %>
-          <div class="col-xs-3">
-            <div class="button_secondary" id="night-activity"><i class="fas fa-moon"></i> <%= activity.name %></div>
-          </div>
+          <%= render 'activities/night_activity', activity: activity %>
         <% end %>
       </div>
     </div>

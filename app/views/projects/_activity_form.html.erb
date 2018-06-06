@@ -1,0 +1,6 @@
+<%= simple_form_for activity, remote: true do |f| %>
+  <%= f.input_field :name, :placeholder => "ex: Lisbon" %>
+  <input type="text" name="project" class="hidden" value= <%= project.id %>>
+  <%= f.select :category, Category: ["Destination", "Day Activity", "Night Activity"] %>
+  <%= f.submit 'add', class: "button_secondary", id: "activity_submit" %>
+<% end %>

@@ -5,7 +5,11 @@ def upvote
     @project = @destination.project
     authorize @destination
     @destination.upvote_by current_user
-    redirect_to votes_project_path(@project)
+    respond_to do |format|
+      format.html { redirect_to votes_project_path(@project)}
+      format.js
+    end
+
   end
 end
 

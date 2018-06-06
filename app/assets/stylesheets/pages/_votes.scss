@@ -18,8 +18,8 @@
 }
 
 a {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .badge-vote {
@@ -29,6 +29,7 @@ a {
   top: -16px;
   right: -61px;
   z-index: 2;
+
 }
 
 #ideas-results {

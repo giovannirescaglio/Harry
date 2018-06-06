@@ -11,7 +11,7 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Destinations</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.destinations.count %> ideas</p>
+        <p>&ensp;<i class="fas fa-arrow-right"></i> <span id='destinations-count'><%= @project.destinations.count %></span> ideas</p>
     </div>
     <div class="col-xs-10 container">
       <div class="row" id='destinations'>
@@ -24,7 +24,7 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Day Activities</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "day").count %> ideas</p>
+      <p>&ensp;<i class="fas fa-arrow-right"></i> <span id='day-activity-count'><%= @project.activities.where(category: "day").count %></span> ideas</p>
     </div>
     <div class="col-xs-10 container">
       <div class="row" id='day-activities'>
@@ -37,7 +37,7 @@
   <div class="row" id="ideas-rows">
     <div class="col-xs-2">
       <h4>Night Activities</h4>
-      <p>&ensp;<i class="fas fa-arrow-right"></i> <%= @project.activities.where(category: "night").count %> ideas</p>
+      <p>&ensp;<i class="fas fa-arrow-right"></i> <span id='night-activity-count'><%= @project.activities.where(category: "night").count %></span> ideas</p>
     </div>
     <div class="col-xs-10 container">
       <div class="row" id='night-activities'>

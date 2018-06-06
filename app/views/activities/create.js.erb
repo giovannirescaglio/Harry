@@ -1,35 +1,53 @@
 function renderForm() {
-  const form = document.getElementById('form-div');
+  let form = document.getElementById('form-div');
   form.innerHTML = '<%= j render "projects/activity_form", project: @project, activity: Activity.new %>'
 }
 
 function insertDestination() {
-  const destinations = document.getElementById('destinations');
+  let destinations = document.getElementById('destinations');
   destinations.insertAdjacentHTML('beforeend', '<%= j render "activities/destination", destination: @destination %>');
 }
 
+function updateDestinationsCount() {
+  let destinationsCount = document.getElementById('destinations-count');
+  destinationsCount.innerHTML =  '<%= @project.destinations.count %>';
+}
+
 function insertDayActivity() {
-  const dayActivities = document.getElementById('day-activities');
+  let dayActivities = document.getElementById('day-activities');
   dayActivities.insertAdjacentHTML('beforeend', '<%= j render "activities/day_activity", activity: @activity %>');
 }
 
+function updateDayActivityCount() {
+  let dayActivityCount = document.getElementById('day-activity-count');
+  dayActivityCount.innerHTML =  '<%= @project.activities.where(category: "day").count %>';
+}
+
 function insertNightActivity() {
-  const nightActivities = document.getElementById('night-activities');
+  let nightActivities = document.getElementById('night-activities');
   nightActivities.insertAdjacentHTML('beforeend', '<%= j render "activities/night_activity", activity: @activity %>');
+}
+
+function updateNightActivityCount() {
+  let nightActivityCount = document.getElementById('night-activity-count');
+  nightActivityCount.innerHTML =  '<%= @project.activities.where(category: "night").count %>';
 }
 
 <% if @destination.persisted? %>
   insertDestination();
+  updateDestinationsCount();
   renderForm()
 <% end %>
 
 <% if @activity.persisted? && @activity.category == 'day' %>
   insertDayActivity();
+  updateDayActivityCount();
   renderForm()
 <% end %>
 
 <% if @activity.persisted? && @activity.category == 'night' %>
   insertNightActivity();
+  updateNightActivityCount();
   renderForm()
 <% end %>
 

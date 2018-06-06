@@ -1,0 +1,43 @@
+function renderForm() {
+  const form = document.getElementById('form-div');
+  form.innerHTML = '<%= j render "projects/activity_form", project: @project, activity: Activity.new %>'
+}
+
+function insertDestination() {
+  const destinations = document.getElementById('destinations');
+  destinations.insertAdjacentHTML('beforeend', '<%= j render "activities/destination", destination: @destination %>');
+}
+
+function insertDayActivity() {
+  const dayActivities = document.getElementById('day-activities');
+  dayActivities.insertAdjacentHTML('beforeend', '<%= j render "activities/day_activity", activity: @activity %>');
+}
+
+function insertNightActivity() {
+  const nightActivities = document.getElementById('night-activities');
+  nightActivities.insertAdjacentHTML('beforeend', '<%= j render "activities/night_activity", activity: @activity %>');
+}
+
+<% if @destination.persisted? %>
+  insertDestination();
+  renderForm()
+<% end %>
+
+<% if @activity.persisted? && @activity.category == 'day' %>
+  insertDayActivity();
+  renderForm()
+<% end %>
+
+<% if @activity.persisted? && @activity.category == 'night' %>
+  insertNightActivity();
+  renderForm()
+<% end %>
+
+// <% if @activity.persisted? %>
+//   <% if @activity.category == 'day' %>
+//     insertDayActivity();
+//   <% else %>
+//     insertNightActivity()
+//   <% end %>
+//   renderForm()
+// <% end %>

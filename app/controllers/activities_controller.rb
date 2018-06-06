@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
     authorize @activity
     @destination = Destination.new
+    @project = Project.find(params[:project].to_i)
     if activities_params[:category] == "Day Activity"
       @activity = Activity.create(name: activities_params[:name], category: "day", project_id: params[:project].to_i)
     elsif activities_params[:category] == "Night Activity"
@@ -10,7 +11,18 @@ class ActivitiesController < ApplicationController
     elsif activities_params[:category] == "Destination"
       @destination = Destination.create(name: activities_params[:name], project_id: params[:project].to_i)
     end
-    redirect_to ideas_project_path(Project.find(params[:project].to_i))
+    if @activity.save || @destination.save
+      respond_to do |format|
+        format.html { redirect_to ideas_project_path(Project.find(params[:project].to_i)) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'activities/create' }
+        format.js
+      end
+    end
+    # redirect_to ideas_project_path(Project.find(params[:project].to_i))
   end
 
   def upvote

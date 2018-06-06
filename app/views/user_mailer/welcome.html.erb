@@ -1,6 +1,10 @@
 <p>Howdy,</p>
-<p>You're receiving this email because you've been invited to <strong><%= @project.name.capitalize %></strong> by <%= @admin.first_name.capitalize %>.</p>
-<p>Ready to party with your friends? Go and log in at <a href="http://www.harry.team/users/sign_in">harry.team</a>.</p>
-<p>Your password is <strong>welcometoharry</strong>. Change it as soon as you log in.</p>
+<p>You're receiving this email because you've been invited to <strong><%= @project.name.capitalize %></strong>.</p>
+<% if  @user.sign_in_count == 0 %>
+  <p>Ready to party with your friends? Go and sign in at <a href="http://www.harry.team/users/sign_in">harry.team</a> to join your friends.</p>
+  <p>Your password is <strong>welcometoharry</strong>. Change it as soon as you log in for the first time.</p>
+<% else %>
+  <p>Go to <a href="http://www.harry.team/users/sign_in">harry.team</a> and login to your account (you already know how it works!)</p>
+<% end %>
 <p>All the best,</p>
 <p>the Harry's team.</p>

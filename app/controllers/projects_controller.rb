@@ -70,13 +70,21 @@ class ProjectsController < ApplicationController
     @project.user = current_user
     @project.step = 1
     @project.save
+
+    @email_errors = []
+
     if @project.persisted?
       @guest = Guest.create!(user: current_user, project: @project, role:"admin")
       params[:emails].each do |email|
         @newuser = User.find_by(email: email)
         @newuser ||= User.create!(email: email, password: ENV["DEFAULT_PASSWORD"])
         @newguest = Guest.create!(user: @newuser, project: @project, role:"participant")
-        UserMailer.welcome(@newuser, @project).deliver_now
+
+        begin
+          UserMailer.welcome(@newuser, @project).deliver_now
+        rescue Postmark::InactiveRecipientError
+          @email_errors << email
+        end
       end
       find_weekends(@project.start_date, @project.end_date).each do |weekend|
         @weekend = WeekEnd.new(weekend)

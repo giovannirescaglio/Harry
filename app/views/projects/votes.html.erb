@@ -14,7 +14,7 @@
           <div class="col-xs-3">
             <div class = "button_primary" id="destination">
               <p><i class="fas fa-map-marker-alt"></i> <%= destination.name %>
-                <%= link_to like_destination_path(destination), method: :put, remote: true, class: "button_primary badge-vote hvr-pop" do %>
+                <%= link_to like_destination_path(destination), method: :put, remote: true, id: "like-button", class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <span data-destination-id='<%= destination.id %>'><%= destination.get_upvotes.size %></span>
                 <% end %>
@@ -37,7 +37,7 @@
           <div class="col-xs-3">
             <div class = "button_secondary" id="day-activity">
               <p><i class="fas fa-sun"></i> <%= activity.name %>
-                <%= link_to like_activity_path(activity), method: :put, remote: true, class: "button_primary badge-vote hvr-pop" do %>
+                <%= link_to like_activity_path(activity), method: :put, remote: true, id: "like-button", class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <span data-day-activity-id='<%= activity.id %>'><%= activity.get_upvotes.size %></span>
                 <% end %>
@@ -61,7 +61,7 @@
           <div class="col-xs-3">
             <div class = "button_secondary" id="night-activity">
               <p><i class="fas fa-moon"></i> <%= activity.name %>
-                <%= link_to like_activity_path(activity), method: :put, remote: true, class: "button_primary badge-vote hvr-pop" do %>
+                <%= link_to like_activity_path(activity), method: :put, remote: true, id: "like-button", class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <span data-night-activity-id='<%= activity.id %>'><%= activity.get_upvotes.size %></span>
                 <% end %>

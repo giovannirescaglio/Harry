@@ -18,8 +18,8 @@
 }
 
 a {
-  color: white !important;
-  text-decoration: none !important;
+  color: white ;
+  text-decoration: none ;
 }
 
 .badge-vote {
@@ -49,4 +49,9 @@ a {
 #ideas-count {
   color: gray;
   font-size: 14px;
+}
+
+#like-button {
+  color: white;
+  text-decoration: none;
 }

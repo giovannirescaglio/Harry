@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     member { get 'ideas'}
     member { get 'votes'}
     member { get 'results'}
+    member {get 'waiting'}
     resources :destinations, only: [:create]
     resources :activities, only: [:create]
     resources :moods, only: [:create, :update] do

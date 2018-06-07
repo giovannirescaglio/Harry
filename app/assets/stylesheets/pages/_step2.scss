@@ -5,13 +5,14 @@ align-items: center;
 justify-content: space-between;
 position: relative;
 background-image: linear-gradient(rgba(18,18,18, 0.37), rgba(18,18,18, 0.20)), image-url("stepsbanner.jpg") ;
-height: 40vh;
+height: 35vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
 background-size: cover;
 h1 {
   margin: 0;
   color: white;
   margin-bottom: 10px;
+  font-size: 36px;
   }
   img {
     margin: -5px;
@@ -50,7 +51,8 @@ display: flex;
 
 .step2-moods{
   text-align: center;
-  padding-top: 20px;
+  padding-top: 30px;
+  padding-right: 10px;
 
 img{
   width: 30%;

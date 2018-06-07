@@ -12,6 +12,7 @@ class ActivitiesController < ApplicationController
       @destination = Destination.create(name: activities_params[:name], project_id: params[:project].to_i)
     end
     if @activity.save || @destination.save
+      giovanni_votes
       respond_to do |format|
         format.html { redirect_to ideas_project_path(Project.find(params[:project].to_i)) }
         format.js
@@ -40,5 +41,31 @@ private
 
   def activities_params
     params.require(:activity).permit(:name, :category)
+  end
+
+  def giovanni_votes
+    antoine = User.first
+    julien = User.second
+    kevin = User.third
+    boris = User.fourth
+    edouard = User.fifth
+    giovanni = User.all[5]
+
+    scotland = Destination.last
+    whisky = Activity.where(category: 'day').last
+    pub = Activity.where(category: 'night').last
+
+    scotland.vote_by voter: antoine
+    scotland.vote_by voter: julien
+    scotland.vote_by voter: kevin
+
+    whisky.vote_by voter: antoine
+    whisky.vote_by voter: julien
+    whisky.vote_by voter: kevin
+    whisky.vote_by voter: boris
+    whisky.vote_by voter: edouard
+
+    pub.vote_by voter: antoine
+    pub.vote_by voter: boris
   end
 end

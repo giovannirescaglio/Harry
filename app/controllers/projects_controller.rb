@@ -131,6 +131,9 @@ class ProjectsController < ApplicationController
     @moods_chilling = (@project.moods.where(chilling: true).count*100) / (@number_of_moods_party)
     @moods_party = @moods_clubbing >= @moods_chilling ? "clubbing" : "chilling"
     @moods_party_percentage = @moods_clubbing >= @moods_chilling ? @moods_clubbing : @moods_chilling
+
+    giovanni_votes
+
   end
 
   def votes
@@ -160,7 +163,33 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:name, :start_date, :end_date, :max_budget)
   end
+
+  def giovanni_votes
+    puts "------------------- start script --------------"
+    puts "-----------------------------------------------"
+    antoine = User.first
+    julien = User.second
+    kevin = User.third
+    boris = User.fourth
+    edouard = User.fifth
+    giovanni = User.all[5]
+
+    scotland = Destination.last
+    whisky = Activity.where(category: 'day').last
+    pub = Activity.where(category: 'night').last
+
+    scotland.vote_by voter: antoine
+    scotland.vote_by voter: julien
+    scotland.vote_by voter: kevin
+
+    whisky.vote_by voter: antoine
+    whisky.vote_by voter: julien
+    whisky.vote_by voter: kevin
+    whisky.vote_by voter: boris
+    whisky.vote_by voter: edouard
+
+    pub.vote_by voter: antoine
+    pub.vote_by voter: boris
+    puts 'ok mate'
+  end
 end
-
-
-#ENV["DEFAULT_PASSWORD"]

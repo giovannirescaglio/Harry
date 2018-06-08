@@ -16,13 +16,13 @@ User.destroy_all
 
 
 # USER SEED
-Antoine = User.create!(first_name: "Antoine", email:"antoine@gmail.com", password: "123456", remote_picture_url: "https://avatars3.githubusercontent.com/u/36988410?s=460&v=4")
+Antoine = User.create!(first_name: "Antoine", email:"antoine@harry.team", password: "123456", remote_picture_url: "https://avatars3.githubusercontent.com/u/36988410?s=460&v=4")
 puts "antoine generated"
-Julien = User.create!(first_name: "Julien", email:"julien@gmail.com", password: "123456", remote_picture_url: "https://avatars3.githubusercontent.com/u/11377783?s=400&v=4")
-Kevin = User.create!(first_name: "Kevin", email:"kevin@gmail.com", password: "123456", remote_picture_url: "https://avatars1.githubusercontent.com/u/9978111?s=460&v=4")
-Remi = User.create!(first_name: "Remi", email:"remi@gmail.com", password: "123456", remote_picture_url: "https://avatars1.githubusercontent.com/u/15021685?s=400&v=4")
-Edouard = User.create!(first_name: "Edouard", email:"edouard@gmail.com", password: "123456", remote_picture_url: "https://pbs.twimg.com/profile_images/930027222584430593/MF_t4pBU_400x400.jpg")
-Giovanni = User.create!(first_name: "Giovanni", email:"giovanni@gmail.com", password: "123456", remote_picture_url: "https://image.flaticon.com/icons/png/512/147/147140.png")
+Julien = User.create!(first_name: "Julien", email:"julien@harry.team", password: "123456", remote_picture_url: "https://avatars3.githubusercontent.com/u/11377783?s=400&v=4")
+Kevin = User.create!(first_name: "Kevin", email:"kevin@harry.team", password: "123456", remote_picture_url: "https://avatars1.githubusercontent.com/u/9978111?s=460&v=4")
+Remi = User.create!(first_name: "Remi", email:"remi@harry.team", password: "123456", remote_picture_url: "https://avatars1.githubusercontent.com/u/15021685?s=400&v=4")
+Edouard = User.create!(first_name: "Edouard", email:"edouard@harry.team", password: "123456", remote_picture_url: "https://pbs.twimg.com/profile_images/930027222584430593/MF_t4pBU_400x400.jpg")
+Giovanni = User.create!(first_name: "Giovanni", email:"giovanni@harry.team", password: "123456", remote_picture_url: "https://image.flaticon.com/icons/png/512/147/147140.png")
 puts "user generated"
 # PROJECT SEED
 

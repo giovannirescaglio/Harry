@@ -12,25 +12,27 @@
 }
 
 #results_modal {
-  height: 85%;
+  height: 95%;
   width: 65%;
   background-color: white;
   opacity: 1;
   margin: 20px;
   padding: 40px 90px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: center;
   align-items: center;
   border-radius: 5px;
   box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.4);
     h1{
-      font-size:36px;
+      font-size:26px;
       margin: auto;
     }
     h2{
       margin: 8px;
-      margin-bottom: 30px;
-      font-size: 20px;
+      margin-bottom: 20px;
+      font-size: 16px;
     }
     img {
       width: 20%;
@@ -45,7 +47,7 @@
 }
 
 #results_logo {
-  margin: auto;
+  margin: 0px;
   width: 40%;
 }
 
@@ -60,7 +62,7 @@
 
 .final-destination {
   margin: 8px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .day-activity_align {
@@ -84,7 +86,7 @@
 #airbnb-link a {
   display: inline-flex;
   justify-content: space-around;
-  margin-top: 25px;
+  margin-top: 15px;
   opacity: 0.75;
   align-items: center;
   width: auto;
@@ -94,7 +96,7 @@
   border: 1px solid $red;
   border-radius: 50px;
   h4 {
-    font-size: 15px;
+    font-size: 14px;
     margin: 8px;
     color: $red;
   }

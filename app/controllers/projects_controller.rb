@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:step1, :step2, :ideas, :step3, :votes, :results ]
+  before_action :set_project, only: [:step1, :step2, :ideas, :step3, :votes, :results, :waiting ]
 
   def step1
     @guests = @project.guests
@@ -152,6 +152,10 @@ class ProjectsController < ApplicationController
     @budgets = @guests.map{ |g| g.budget.to_i}
     @average_budget = @budgets.sum/(@budgets.count)
     @top_weekend = @project.week_ends.sort_by{|weekend| -weekend.get_upvotes.size}.first
+  end
+
+  def waiting
+    authorize @project
   end
 
   private

@@ -55,6 +55,10 @@ class ProjectPolicy < ApplicationPolicy
     votes?
   end
 
+  def waiting?
+    true
+  end
+
    def update?
     true
   end

@@ -6,14 +6,14 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-6 container" id="weekend-choices">
+      <div class="col-xs-6" id="weekend-choices">
         <div class="row">
           <h3><i class="far fa-calendar-alt"></i> Confirm your schedule</h3>
           <p><%= @admin %> has already defined the period when the week-end should take place but we still need to know which ones work for you! Once we know this we will let you know which week-end maximizes attendance in your team.
           </p>
           <p class="violet-p">Please click on the week-ends when you plan to be available:</p>
         </div>
-        <div class="row container" id="weekends-list">
+        <div class="container" id="weekends-list">
           <div class="row">
             <% @week_ends.each do |week_end| %>
             <div class="col-xs-6">

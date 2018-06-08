@@ -6,16 +6,6 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-6" id="budget-input">
-        <h3><i class="fas fa-hand-holding-usd"></i></i> Define your budget</h3>
-        <p>How much are you willing to spend for this week-end? Please provide your best estimate. We will compute your input together with the answers of your team and let you know the final average budget per person later.
-        </p>
-        <p class="violet-p"><%= @admin %> has set the maximum budget/person to: <%= @project.max_budget %>€</p>
-        <%= simple_form_for @guest do |f| %>
-          <%= f.input :budget, placeholder: 'ex: 300€' %>
-          <%= f.submit 'submit', class: "button_secondary", id: "submit_guest_budget" %>
-        <% end %>
-      </div>
       <div class="col-xs-6 container" id="weekend-choices">
         <div class="row">
           <h3><i class="far fa-calendar-alt"></i> Confirm your schedule</h3>
@@ -35,9 +25,19 @@
           </div>
         </div>
       </div>
+      <div class="col-xs-6" id="budget-input">
+        <h3><i class="fas fa-hand-holding-usd"></i></i> Define your budget</h3>
+        <p>How much are you willing to spend for this week-end? Please provide your best estimate. We will compute your input together with the answers of your team and let you know the final average budget per person later.
+        </p>
+        <p class="violet-p"><%= @admin %> has set the maximum budget/person to: <%= @project.max_budget %>€</p>
+        <%= simple_form_for @guest do |f| %>
+          <%= f.input :budget, placeholder: 'ex: 300€' %>
+          <%= f.submit 'Done', class: "button_primary hvr-pop", id: "submit_guest_budget" %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div id="ideas-done">
-    <%= link_to "done", step2_project_path(@project), class: "button_primary hvr-pop" %>
+    <%#= link_to "done", step2_project_path(@project), class: "button_primary hvr-pop" %>
   </div>
 </div>

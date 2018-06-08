@@ -12,8 +12,8 @@
       <div class="row">
         <% @destinations.each do |destination| %>
           <div class="col-xs-3">
-            <div class = "button_primary" id="destination">
-              <p><i class="fas fa-map-marker-alt"></i> <%= destination.name %>
+            <div class = "button_destination" id="">
+              <p><i class="fas fa-map-marker-alt icon-marged-right"></i> <%= destination.name %>
                 <%= link_to like_destination_path(destination), method: :put, remote: true, id: "like-button", class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <span data-destination-id='<%= destination.id %>'><%= destination.get_upvotes.size %></span>
@@ -35,8 +35,8 @@
       <div class="row">
         <% @day_activities.each do |activity| %>
           <div class="col-xs-3">
-            <div class = "button_secondary" id="day-activity">
-              <p><i class="fas fa-sun"></i> <%= activity.name %>
+            <div class = "button_activity" id="">
+              <p><i class="fas fa-sun icon-marged-right"></i> <%= activity.name %>
                 <%= link_to like_activity_path(activity), method: :put, remote: true, id: "like-button", class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <span data-day-activity-id='<%= activity.id %>'><%= activity.get_upvotes.size %></span>
@@ -59,8 +59,8 @@
       <div class="row">
         <% @night_activities.each do |activity| %>
           <div class="col-xs-3">
-            <div class = "button_secondary" id="night-activity">
-              <p><i class="fas fa-moon"></i> <%= activity.name %>
+            <div class = "button_activity" id="night">
+              <p><i class="fas fa-moon icon-marged-right"></i> <%= activity.name %>
                 <%= link_to like_activity_path(activity), method: :put, remote: true, id: "like-button", class: "button_primary badge-vote hvr-pop" do %>
                   <i class="fas fa-thumbs-up"></i>
                   <span data-night-activity-id='<%= activity.id %>'><%= activity.get_upvotes.size %></span>

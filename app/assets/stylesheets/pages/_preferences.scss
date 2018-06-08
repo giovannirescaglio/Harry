@@ -24,15 +24,18 @@
 
 #submit_guest_budget {
   padding: 5px 30px;
-  float:right;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
 }
 
 #weekend-choices {
-  padding-left: 50px;
+  padding-left: 10px;
   padding-top: 10px;
 }
 
 #budget-input {
-  padding-left: 50px;
+  width: 550px;
+  padding-left: 90px;
   padding-top: 10px;
 }

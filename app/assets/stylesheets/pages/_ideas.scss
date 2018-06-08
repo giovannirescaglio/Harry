@@ -85,15 +85,23 @@
   top: 27px;
 }
 
-#ideas-done {
-  height: 100px;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+.ideas-done {
+  height: 70px;
   display: flex;
-  justify-content: flex-end;
+  width: 400px;
+  justify-content: space-between;
+  text-align: center;
+  background: #EDEBEB;
+  border-radius: 5px;
   align-items: center;
-  padding: 50px;
+  padding: 25px;
+  margin: 20px 50px;
+  margin-top: 0px;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  p {
+    margin: 0px 0px;
+    opacity: 0.8;
+      }
 }
 
 

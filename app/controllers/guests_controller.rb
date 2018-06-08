@@ -9,9 +9,10 @@ class GuestsController < ApplicationController
 
   def update
     @guest = Guest.find(params[:id])
+    @project = @guest.project
     authorize @guest
     @guest.update(guest_params)
-    redirect_to preferences_guest_path(@guest)
+    redirect_to step2_project_path(@project)
   end
 
   private

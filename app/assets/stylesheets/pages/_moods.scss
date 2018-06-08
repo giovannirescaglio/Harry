@@ -70,16 +70,6 @@
   background-size: cover;
 }
 
-#budget-input {
-  padding-right: 50px;
-  padding-top: 10px;
-}
-
-#weekend-choices {
-  padding-left: 50px;
-  padding-top: 10px;
-}
-
 .violet-p {
   color: $violet;
 }
@@ -94,10 +84,6 @@
   color: black;
   font-size: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.3);
-}
-
-#submit_guest_budget {
-  padding: 5px 30px;
 }
 
 #weekends-list {
